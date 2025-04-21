@@ -4,11 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFT Europa - International Logistics</title>
-
-  <!-- Globe.js ve Three.js Kütüphaneleri -->
-  <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
-  <script src="https://unpkg.com/three-globe"></script>
-
   <style>
     body {
       margin: 0;
@@ -16,12 +11,10 @@
       background-color: #f9f9f9;
       color: #333;
     }
-
     header {
       background: url('banner.jpg') center/contain no-repeat;
-      height: 450px;
+      height: 370px;
     }
-
     nav {
       background-color: #004080;
       display: flex;
@@ -29,19 +22,11 @@
       gap: 30px;
       padding: 10px 0;
     }
-
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-
-    #globeViz {
-      width: 100%;
-      height: 500px;
-      background: #000;
-    }
-
     section {
       padding: 40px;
       max-width: 1000px;
@@ -51,11 +36,9 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
     h2 {
       color: #004080;
     }
-
     footer {
       background-color: #00264d;
       color: white;
@@ -67,7 +50,6 @@
 </head>
 <body>
   <header></header>
-
   <nav>
     <a href="#anasayfa">Anasayfa</a>
     <a href="#hakkimizda">Hakkımızda</a>
@@ -76,9 +58,6 @@
     <a href="#iletisim">İletişim</a>
   </nav>
 
-  <!-- Dünyanın döndüğü bölüm -->
-  <div id="globeViz"></div>
-
   <section id="anasayfa">
     <h2>Anasayfa</h2>
     <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
@@ -86,7 +65,7 @@
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-    <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
+    <p>Almanya merkezli firmamız, yılların verdiği tecrübe ile Hollanda, Belçika, Fransa ve çevre ülkelerde lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
   </section>
 
   <section id="misyon">
@@ -109,26 +88,6 @@
   <footer>
     <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
   </footer>
-
-  <script>
-    // Globe kodu
-    fetch('https://unpkg.com/world-atlas/countries-110m.json')
-      .then(res => res.json())
-      .then(data => {
-        const countries = window.topojson.feature(data, data.objects.countries).features;
-
-        const world = Globe()
-          (document.getElementById('globeViz'))
-          .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-          .polygonsData(countries)
-          .polygonCapColor(() => 'rgba(200, 200, 200, 0.6)')
-          .polygonSideColor(() => 'rgba(0, 100, 0, 0.05)')
-          .polygonStrokeColor(() => '#111')
-          .polygonLabel(({ properties: d }) => `${d.name}`);
-      });
-  </script>
-
-  <!-- TopoJSON için CDN -->
-  <script src="https://unpkg.com/topojson@3"></script>
 </body>
 </html>
+
