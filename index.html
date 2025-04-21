@@ -5,9 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFT Europa - International Logistics</title>
+
   <!-- Globe için gerekli kütüphaneler -->
-<script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
-<script src="https://unpkg.com/globe.gl"></script>
+  <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+  <script src="https://unpkg.com/globe.gl"></script>
+
   <style>
     body {
       margin: 0;
@@ -15,12 +17,12 @@
       background-color: #f9f9f9;
       color: #333;
     }
+
     header {
-      background-color: #00264d;
-      color: white;
-      padding: 20px;
-      text-align: center;
+      background: url('banner.jpg') center/contain no-repeat;
+      height: 450px;
     }
+
     nav {
       background-color: #004080;
       display: flex;
@@ -28,11 +30,13 @@
       gap: 30px;
       padding: 10px 0;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     section {
       padding: 40px;
       max-width: 1000px;
@@ -42,9 +46,11 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
+
     h2 {
       color: #004080;
     }
+
     footer {
       background-color: #00264d;
       color: white;
@@ -52,33 +58,33 @@
       padding: 20px;
       margin-top: 40px;
     }
+
+    #globeViz {
+      width: 100%;
+      height: 500px;
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
-  <div id="globeViz" style="width: 100%; height: 600px;"></div>
- <header style="background: url('banner.jpg') center/cover no-repeat; height: 370px;"></header>
 
-<nav>
-  <a href="#anasayfa">Anasayfa</a>
-  <a href="#hakkimizda">Hakkımızda</a>
-  <a href="#misyon">Misyon</a>
-  <a href="#vizyon">Vizyon</a>
-  <a href="#iletisim">İletişim</a>
-</nav>
+  <header></header>
+
+  <nav>
+    <a href="#anasayfa">Anasayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#misyon">Misyon</a>
+    <a href="#vizyon">Vizyon</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
 
   <section id="anasayfa">
-  <h2>Anasayfa</h2>
-  <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
+    <h2>Anasayfa</h2>
+    <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
 
-  <!-- Döndürülebilir dünya haritası -->
-  <div id="globeViz" style="width: 100%; height: 500px; margin-top: 30px;"></div>
-  <script>
-    const world = Globe()
-      (document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
-      .backgroundColor('#ffffff');
-  </script>
-</section>
+    <!-- DÖNDÜRÜLEBİLİR DÜNYA HARİTASI -->
+    <div id="globeViz"></div>
+  </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
@@ -105,18 +111,12 @@
   <footer>
     <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
   </footer>
+
   <script>
-  const world = Globe()
-    (document.getElementById('globeViz'))
-    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
-    .pointsData([
-      { lat: 51.1657, lng: 10.4515, size: 1, color: 'red', name: 'Almanya' },
-      { lat: 50.8503, lng: 4.3517, size: 1, color: 'blue', name: 'Belçika' },
-      { lat: 52.3702, lng: 4.8952, size: 1, color: 'green', name: 'Hollanda' }
-    ])
-    .pointAltitude('size')
-    .pointColor('color')
-    .onPointClick(point => alert(`${point.name}\nKoli bilgisi ve fiyat: ...`));
-</script>
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .backgroundColor('#ffffff');
+  </script>
 </body>
 </html>
