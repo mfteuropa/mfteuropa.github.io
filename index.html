@@ -55,6 +55,7 @@
   </style>
 </head>
 <body>
+  <div id="globeViz" style="width: 100%; height: 600px;"></div>
  <header style="background: url('banner.jpg') center/contain no-repeat; height: 450px; background-color: #fff;"></header>
 
 <nav>
@@ -95,5 +96,18 @@
   <footer>
     <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
   </footer>
+  <script>
+  const world = Globe()
+    (document.getElementById('globeViz'))
+    .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
+    .pointsData([
+      { lat: 51.1657, lng: 10.4515, size: 1, color: 'red', name: 'Almanya' },
+      { lat: 50.8503, lng: 4.3517, size: 1, color: 'blue', name: 'Belçika' },
+      { lat: 52.3702, lng: 4.8952, size: 1, color: 'green', name: 'Hollanda' }
+    ])
+    .pointAltitude('size')
+    .pointColor('color')
+    .onPointClick(point => alert(`${point.name}\nKoli bilgisi ve fiyat: ...`));
+</script>
 </body>
 </html>
