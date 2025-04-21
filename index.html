@@ -147,7 +147,7 @@
   <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
   <input type="text" id="posta" placeholder="Posta Kodu">
   <p id="fiyat">Fiyat: -</p>
-  <button onclick="hesapla()">Fiyat Hesapla</button>
+  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
   <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
   <button onclick="kapat()">Kapat</button>
 </div>
@@ -157,25 +157,40 @@
 </footer>
 
 <script>
+  let seciliUlke = '';
+  const ulkeCarpanlari = {
+    "Almanya": 1.5,
+    "Hollanda": 1.3,
+    "Belçika": 1.4,
+    "Lüksemburg": 1.2,
+    "Danimarka": 1.6,
+    "Avusturya": 1.3,
+    "Fransa": 1.5,
+    "İspanya": 1.7,
+    "İtalya": 1.6
+  };
+
   function showForm(ulke) {
     document.getElementById('popup').style.display = 'block';
-    document.getElementById('ulkeBaslik').innerText = ulke;
+    document.getElementById('ulkeBaslik').textContent = ulke;
+    seciliUlke = ulke;
   }
+
   function kapat() {
     document.getElementById('popup').style.display = 'none';
   }
-  function hesapla() {
+
+  function hesaplaFiyat() {
     const en = parseFloat(document.getElementById('en').value) || 0;
     const boy = parseFloat(document.getElementById('boy').value) || 0;
-    const yuk = parseFloat(document.getElementById('yukseklik').value) || 0;
+    const yukseklik = parseFloat(document.getElementById('yukseklik').value) || 0;
     const agirlik = parseFloat(document.getElementById('agirlik').value) || 0;
-
-    const hacimDesi = (en * boy * yuk) / 3000;
-    const fiyat = Math.max(hacimDesi, agirlik) * 1.5;
+    const hacimDesi = (en * boy * yukseklik) / 3000;
+    const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
+    const fiyat = Math.max(hacimDesi, agirlik) * carpan;
     document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
   }
 </script>
 
 </body>
 </html>
-
