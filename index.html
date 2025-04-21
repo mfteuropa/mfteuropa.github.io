@@ -4,13 +4,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MFT Europa - Renkli Dünya Haritası</title>
+  <title>MFT Europa - Interactive Globe</title>
   <style>
     html, body {
       margin: 0;
-      padding: 0;
       height: 100%;
-      background-color: #f4f4f4;
       overflow: hidden;
     }
     #globeViz {
@@ -19,53 +17,37 @@
     }
   </style>
   <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
-  <script src="https://unpkg.com/three-globe@2.24.11/dist/three-globe.min.js"></script>
+  <script src="https://unpkg.com/three-globe@2.24.11"></script>
   <script src="https://unpkg.com/topojson@3"></script>
   <script src="https://unpkg.com/d3@7"></script>
 </head>
 <body>
   <div id="globeViz"></div>
   <script>
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById('globeViz').appendChild(renderer.domElement);
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera();
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    camera.position.z = 300;
-
-    const globe = new ThreeGlobe()
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-blue-marble.jpg')
-      .polygonsData([])
-      .polygonCapColor(() => d3.schemeCategory10[Math.floor(Math.random() * 10)])
-      .polygonSideColor(() => 'rgba(0, 100, 0, 0.15)')
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
+      .showAtmosphere(true)
+      .atmosphereColor('#3a228a')
+      .atmosphereAltitude(0.25)
+      .backgroundColor('#000')
+      .polygonCapColor(() => 'rgba(200, 200, 200, 0.3)')
+      .polygonSideColor(() => 'rgba(100, 100, 100, 0.15)')
       .polygonStrokeColor(() => '#111')
-      .polygonLabel(({ properties: d }) => `Ülke: ${d.name}`)
-      .onPolygonHover(hoverD => globe.polygonAltitude(d => d === hoverD ? 0.12 : 0.06));
+      .onPolygonHover(hoverD => world
+          .polygonAltitude(d => d === hoverD ? 0.12 : 0.06)
+          .polygonCapColor(d => d === hoverD ? 'steelblue' : 'rgba(200, 200, 200, 0.3)')
+      );
 
-    scene.add(globe);
-
-    const ambientLight = new THREE.AmbientLight(0xbbbbbb);
-    scene.add(ambientLight);
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.6);
-    directionalLight.position.set(0, 50, 100);
-    scene.add(directionalLight);
-
-    fetch('https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson')
-      .then(res => res.json())
-      .then(countries => {
-        globe.polygonsData(countries.features);
-      });
-
-    function animate() {
-      requestAnimationFrame(animate);
-      globe.rotation.y += 0.0015;
-      renderer.render(scene, camera);
-    }
-    animate();
+    // Ülkeleri yükle
+    fetch('https://unpkg.com/world-atlas/countries-110m.json').then(res => res.json()).then(worldData => {
+      const countries = topojson.feature(worldData, worldData.objects.countries).features;
+      world.polygonsData(countries)
+        .polygonLabel(({ properties: d }) => `
+          <b>${d.name || 'Ülke'}</b>
+        `);
+    });
   </script>
 </body>
 </html>
-
