@@ -16,15 +16,15 @@
       height: 450px;
     }
     nav {
-      background-color: #0074d9;
+      background-color: #004080;
       display: flex;
       justify-content: center;
+      gap: 30px;
       padding: 10px 0;
     }
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
       font-weight: bold;
     }
     section {
@@ -36,127 +36,146 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    #map-container {
-      display: flex;
-      justify-content: center;
-      margin-top: 40px;
+    h2 {
+      color: #004080;
     }
-    .country {
+    .map-container {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .map-container img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
       cursor: pointer;
     }
-    #form-container {
+    .form-popup {
       display: none;
-      margin-top: 20px;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #004080;
+      border-radius: 10px;
+      z-index: 999;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
-    label {
-      display: block;
-      margin: 10px 0 5px;
-    }
-    input {
+    .form-popup input {
       width: 100%;
+      margin: 5px 0;
       padding: 8px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
     }
-    button {
-      padding: 10px 20px;
-      background-color: #0074d9;
+    .form-popup button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #004080;
       color: white;
       border: none;
-      border-radius: 5px;
       cursor: pointer;
     }
-    #price-output {
-      margin-top: 10px;
-      font-weight: bold;
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-  <header></header>
-  <nav>
-    <a href="#anasayfa">Anasayfa</a>
-    <a href="#hakkimizda">Hakkımızda</a>
-    <a href="#misyon">Misyon</a>
-    <a href="#vizyon">Vizyon</a>
-    <a href="#iletisim">İletişim</a>
-  </nav>
 
-  <section id="anasayfa">
-    <h2>Anasayfa</h2>
-    <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
+<header></header>
 
-    <div id="map-container">
-      <img src="map.png" alt="Dünya Haritası" usemap="#countries" width="800">
-      <map name="countries">
-        <area shape="rect" coords="400,130,420,150" href="#" alt="Germany" onclick="showForm('Germany')">
-        <area shape="rect" coords="370,120,390,140" href="#" alt="Netherlands" onclick="showForm('Netherlands')">
-        <area shape="rect" coords="360,140,380,160" href="#" alt="Belgium" onclick="showForm('Belgium')">
-        <area shape="rect" coords="370,150,390,170" href="#" alt="Luxembourg" onclick="showForm('Luxembourg')">
-        <area shape="rect" coords="410,100,430,120" href="#" alt="Denmark" onclick="showForm('Denmark')">
-        <area shape="rect" coords="430,180,450,200" href="#" alt="Austria" onclick="showForm('Austria')">
-        <area shape="rect" coords="390,160,410,180" href="#" alt="France" onclick="showForm('France')">
-        <area shape="rect" coords="360,200,380,220" href="#" alt="Spain" onclick="showForm('Spain')">
-        <area shape="rect" coords="430,220,450,240" href="#" alt="Italy" onclick="showForm('Italy')">
-      </map>
-    </div>
+<nav>
+  <a href="#anasayfa">Anasayfa</a>
+  <a href="#hakkimizda">Hakkımızda</a>
+  <a href="#misyon">Misyon</a>
+  <a href="#vizyon">Vizyon</a>
+  <a href="#iletisim">İletişim</a>
+</nav>
 
-    <div id="form-container">
-      <h3 id="selected-country"></h3>
-      <label>En (cm):</label><input type="number" id="width">
-      <label>Boy (cm):</label><input type="number" id="length">
-      <label>Yükseklik (cm):</label><input type="number" id="height">
-      <label>Ağırlık (kg):</label><input type="number" id="weight">
-      <label>Posta Kodu:</label><input type="text" id="postal">
-      <button onclick="calculatePrice()">Fiyatı Gör</button>
-      <div id="price-output"></div>
-      <button onclick="alert('Rezervasyonunuz alındı!')">Rezervasyon Oluştur</button>
-    </div>
-  </section>
+<section id="anasayfa">
+  <h2>Anasayfa</h2>
+  <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
 
-  <section id="hakkimizda">
-    <h2>Hakkımızda</h2>
-    <p>Almanya merkezli firmamız, yılların verdiği tecrübe ile Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
-  </section>
+  <div class="map-container">
+    <img src="harita.jpg" alt="Dünya Haritası" usemap="#ulkeler">
+    <map name="ulkeler">
+      <area shape="rect" coords="400,150,470,200" alt="Almanya" onclick="showForm('Almanya')" />
+      <area shape="rect" coords="350,130,400,170" alt="Hollanda" onclick="showForm('Hollanda')" />
+      <area shape="rect" coords="330,170,390,200" alt="Belçika" onclick="showForm('Belçika')" />
+      <area shape="rect" coords="320,130,360,150" alt="Lüksemburg" onclick="showForm('Lüksemburg')" />
+      <area shape="rect" coords="450,90,520,140" alt="Danimarka" onclick="showForm('Danimarka')" />
+      <area shape="rect" coords="460,180,520,230" alt="Avusturya" onclick="showForm('Avusturya')" />
+      <area shape="rect" coords="300,230,370,270" alt="Fransa" onclick="showForm('Fransa')" />
+      <area shape="rect" coords="260,280,340,330" alt="İspanya" onclick="showForm('İspanya')" />
+      <area shape="rect" coords="400,260,460,310" alt="İtalya" onclick="showForm('İtalya')" />
+    </map>
+  </div>
+</section>
 
-  <section id="misyon">
-    <h2>Misyon</h2>
-    <p>Güvenli, zamanında ve ekonomik taşımacılık ile müşterilerimize değer katmak.</p>
-  </section>
+<section id="hakkimizda">
+  <h2>Hakkımızda</h2>
+  <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
+</section>
 
-  <section id="vizyon">
-    <h2>Vizyon</h2>
-    <p>Avrupa'da lojistik alanında lider ve örnek bir firma olmak.</p>
-  </section>
+<section id="misyon">
+  <h2>Misyon</h2>
+  <p>Güvenli, zamanında ve ekonomik taşımacılık ile müşterilerimize değer katmak.</p>
+</section>
 
-  <section id="iletisim">
-    <h2>İletişim</h2>
-    <p>Telefon: +49 xxx xxx xxxx</p>
-    <p>E-posta: info@mfteuropa.com</p>
-    <p>Adres: Almanya, [firma adresiniz]</p>
-  </section>
+<section id="vizyon">
+  <h2>Vizyon</h2>
+  <p>Avrupa'da lojistik alanında lider ve örnek bir firma olmak.</p>
+</section>
 
-  <footer style="text-align:center;padding:20px;background:#00264d;color:white;">
-    &copy; 2025 MFT Europa. Tüm hakları saklıdır.
-  </footer>
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p>Telefon: +49 xxx xxx xxxx</p>
+  <p>E-posta: info@mfteuropa.com</p>
+  <p>Adres: Almanya, [firma adresiniz]</p>
+</section>
 
-  <script>
-    function showForm(country) {
-      document.getElementById('selected-country').innerText = country;
-      document.getElementById('form-container').style.display = 'block';
-    }
+<div id="popup" class="form-popup">
+  <h3 id="ulkeBaslik">Ülke</h3>
+  <input type="text" id="en" placeholder="Koli Eni (cm)">
+  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+  <input type="text" id="posta" placeholder="Posta Kodu">
+  <p id="fiyat">Fiyat: -</p>
+  <button onclick="hesapla()">Fiyat Hesapla</button>
+  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
+  <button onclick="kapat()">Kapat</button>
+</div>
 
-    function calculatePrice() {
-      const w = +document.getElementById('width').value;
-      const l = +document.getElementById('length').value;
-      const h = +document.getElementById('height').value;
-      const weight = +document.getElementById('weight').value;
-      const volume = (w * l * h) / 5000;
-      const price = (weight + volume) * 1.5;
-      document.getElementById('price-output').innerText = `Tahmini Fiyat: €${price.toFixed(2)}`;
-    }
-  </script>
+<footer>
+  <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
+</footer>
+
+<script>
+  function showForm(ulke) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('ulkeBaslik').innerText = ulke;
+  }
+  function kapat() {
+    document.getElementById('popup').style.display = 'none';
+  }
+  function hesapla() {
+    const en = parseFloat(document.getElementById('en').value) || 0;
+    const boy = parseFloat(document.getElementById('boy').value) || 0;
+    const yuk = parseFloat(document.getElementById('yukseklik').value) || 0;
+    const agirlik = parseFloat(document.getElementById('agirlik').value) || 0;
+
+    const hacimDesi = (en * boy * yuk) / 3000;
+    const fiyat = Math.max(hacimDesi, agirlik) * 1.5;
+    document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
+  }
+</script>
+
 </body>
 </html>
 
