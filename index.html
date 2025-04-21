@@ -1,53 +1,127 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MFT Europa - Interactive Globe</title>
+  <title>MFT Europa - International Logistics</title>
+
+  <!-- Gerekli kütüphaneler -->
+  <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
+  <script src="https://unpkg.com/three-globe@2.27.5/dist/three-globe.min.js"></script>
+  <script src="https://unpkg.com/topojson@3"></script>
+
   <style>
-    html, body {
+    body {
       margin: 0;
-      height: 100%;
-      overflow: hidden;
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: url('banner.jpg') center/contain no-repeat;
+      height: 450px;
+    }
+    nav {
+      background-color: #004080;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+      background-color: white;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #004080;
+    }
+    footer {
+      background-color: #00264d;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
     }
     #globeViz {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 600px;
     }
   </style>
-  <script src="https://unpkg.com/three@0.150.1/build/three.min.js"></script>
-  <script src="https://unpkg.com/three-globe@2.24.11"></script>
-  <script src="https://unpkg.com/topojson@3"></script>
-  <script src="https://unpkg.com/d3@7"></script>
 </head>
 <body>
-  <div id="globeViz"></div>
+  <header></header>
+  <nav>
+    <a href="#anasayfa">Anasayfa</a>
+    <a href="#hakkimizda">Hakkımızda</a>
+    <a href="#misyon">Misyon</a>
+    <a href="#vizyon">Vizyon</a>
+    <a href="#iletisim">İletişim</a>
+  </nav>
+
+  <section id="anasayfa">
+    <h2>Anasayfa</h2>
+    <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
+    <div id="globeViz"></div>
+  </section>
+
+  <section id="hakkimizda">
+    <h2>Hakkımızda</h2>
+    <p>Almanya merkezli firmamız, yılların verdiği tecrübe ile Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
+  </section>
+
+  <section id="misyon">
+    <h2>Misyon</h2>
+    <p>Güvenli, zamanında ve ekonomik taşımacılık ile müşterilerimize değer katmak.</p>
+  </section>
+
+  <section id="vizyon">
+    <h2>Vizyon</h2>
+    <p>Avrupa'da lojistik alanında lider ve örnek bir firma olmak.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+    <p>Telefon: +49 xxx xxx xxxx</p>
+    <p>E-posta: info@mfteuropa.com</p>
+    <p>Adres: Almanya, [firma adresiniz]</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
+  </footer>
+
   <script>
     const world = Globe()
-      (document.getElementById('globeViz'))
-      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-dark.jpg')
       .bumpImageUrl('//unpkg.com/three-globe/example/img/earth-topology.png')
-      .showAtmosphere(true)
-      .atmosphereColor('#3a228a')
-      .atmosphereAltitude(0.25)
-      .backgroundColor('#000')
-      .polygonCapColor(() => 'rgba(200, 200, 200, 0.3)')
-      .polygonSideColor(() => 'rgba(100, 100, 100, 0.15)')
+      .showGlobe(true)
+      .showGraticules(true)
+      .backgroundColor('white')
+      .polygonCapColor(() => 'rgba(100, 200, 255, 0.6)')
+      .polygonSideColor(() => 'rgba(0, 100, 200, 0.15)')
       .polygonStrokeColor(() => '#111')
       .onPolygonHover(hoverD => world
-          .polygonAltitude(d => d === hoverD ? 0.12 : 0.06)
-          .polygonCapColor(d => d === hoverD ? 'steelblue' : 'rgba(200, 200, 200, 0.3)')
+        .polygonAltitude(d => d === hoverD ? 0.12 : 0.06)
+        .polygonCapColor(d => d === hoverD ? 'orange' : 'rgba(100, 200, 255, 0.6)')
       );
 
-    // Ülkeleri yükle
-    fetch('https://unpkg.com/world-atlas/countries-110m.json').then(res => res.json()).then(worldData => {
-      const countries = topojson.feature(worldData, worldData.objects.countries).features;
-      world.polygonsData(countries)
-        .polygonLabel(({ properties: d }) => `
-          <b>${d.name || 'Ülke'}</b>
-        `);
+    fetch('https://unpkg.com/world-atlas@2.0.2/countries-110m.json').then(res => res.json()).then(countries => {
+      const geoJson = topojson.feature(countries, countries.objects.countries);
+      world.polygonsData(geoJson.features)
+        .polygonLabel(({ properties: d }) => `ÜLKE: ${d.name}`);
     });
+
+    document.getElementById('globeViz').appendChild(world());
   </script>
 </body>
 </html>
