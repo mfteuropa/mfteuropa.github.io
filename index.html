@@ -69,6 +69,14 @@
   <section id="anasayfa">
     <h2>Anasayfa</h2>
     <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
+    <!-- Döndürülebilir dünya haritası -->
+  <div id="globeViz" style="width: 100%; height: 500px; margin-top: 30px;"></div>
+  <script>
+    const world = Globe()
+      (document.getElementById('globeViz'))
+      .globeImageUrl('//unpkg.com/three-globe/example/img/earth-night.jpg')
+      .backgroundColor('#ffffff');
+  </script>
   </section>
 
   <section id="hakkimizda">
