@@ -5,38 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFT Europa - International Logistics</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f9f9f9;
       color: #333;
     }
-
     header {
-      width: 100%;
-      height: 450px;
       background: url('banner.jpg') center/cover no-repeat;
+      height: 450px;
     }
-
     nav {
-      background-color: #004080;
+      background-color: #0074d9;
       display: flex;
       justify-content: center;
-      gap: 30px;
       padding: 10px 0;
     }
-
     nav a {
       color: white;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
     }
-
     section {
       padding: 40px;
       max-width: 1000px;
@@ -46,23 +36,45 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-
-    h2 {
-      color: #004080;
-    }
-
-    footer {
-      background-color: #00264d;
-      color: white;
-      text-align: center;
-      padding: 20px;
+    #map-container {
+      display: flex;
+      justify-content: center;
       margin-top: 40px;
+    }
+    .country {
+      cursor: pointer;
+    }
+    #form-container {
+      display: none;
+      margin-top: 20px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0074d9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #price-output {
+      margin-top: 10px;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header></header>
-
   <nav>
     <a href="#anasayfa">Anasayfa</a>
     <a href="#hakkimizda">Hakkımızda</a>
@@ -74,11 +86,38 @@
   <section id="anasayfa">
     <h2>Anasayfa</h2>
     <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
+
+    <div id="map-container">
+      <img src="map.png" alt="Dünya Haritası" usemap="#countries" width="800">
+      <map name="countries">
+        <area shape="rect" coords="400,130,420,150" href="#" alt="Germany" onclick="showForm('Germany')">
+        <area shape="rect" coords="370,120,390,140" href="#" alt="Netherlands" onclick="showForm('Netherlands')">
+        <area shape="rect" coords="360,140,380,160" href="#" alt="Belgium" onclick="showForm('Belgium')">
+        <area shape="rect" coords="370,150,390,170" href="#" alt="Luxembourg" onclick="showForm('Luxembourg')">
+        <area shape="rect" coords="410,100,430,120" href="#" alt="Denmark" onclick="showForm('Denmark')">
+        <area shape="rect" coords="430,180,450,200" href="#" alt="Austria" onclick="showForm('Austria')">
+        <area shape="rect" coords="390,160,410,180" href="#" alt="France" onclick="showForm('France')">
+        <area shape="rect" coords="360,200,380,220" href="#" alt="Spain" onclick="showForm('Spain')">
+        <area shape="rect" coords="430,220,450,240" href="#" alt="Italy" onclick="showForm('Italy')">
+      </map>
+    </div>
+
+    <div id="form-container">
+      <h3 id="selected-country"></h3>
+      <label>En (cm):</label><input type="number" id="width">
+      <label>Boy (cm):</label><input type="number" id="length">
+      <label>Yükseklik (cm):</label><input type="number" id="height">
+      <label>Ağırlık (kg):</label><input type="number" id="weight">
+      <label>Posta Kodu:</label><input type="text" id="postal">
+      <button onclick="calculatePrice()">Fiyatı Gör</button>
+      <div id="price-output"></div>
+      <button onclick="alert('Rezervasyonunuz alındı!')">Rezervasyon Oluştur</button>
+    </div>
   </section>
 
   <section id="hakkimizda">
     <h2>Hakkımızda</h2>
-    <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
+    <p>Almanya merkezli firmamız, yılların verdiği tecrübe ile Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
   </section>
 
   <section id="misyon">
@@ -98,8 +137,26 @@
     <p>Adres: Almanya, [firma adresiniz]</p>
   </section>
 
-  <footer>
-    <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
+  <footer style="text-align:center;padding:20px;background:#00264d;color:white;">
+    &copy; 2025 MFT Europa. Tüm hakları saklıdır.
   </footer>
+
+  <script>
+    function showForm(country) {
+      document.getElementById('selected-country').innerText = country;
+      document.getElementById('form-container').style.display = 'block';
+    }
+
+    function calculatePrice() {
+      const w = +document.getElementById('width').value;
+      const l = +document.getElementById('length').value;
+      const h = +document.getElementById('height').value;
+      const weight = +document.getElementById('weight').value;
+      const volume = (w * l * h) / 5000;
+      const price = (weight + volume) * 1.5;
+      document.getElementById('price-output').innerText = `Tahmini Fiyat: €${price.toFixed(2)}`;
+    }
+  </script>
 </body>
 </html>
+
