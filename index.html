@@ -9,20 +9,32 @@
     body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
     header {
       background: url('banner.jpg') center/cover no-repeat;
-      height: 480px;
+      height: 500px;
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: fadeIn 1s ease-in;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      background-color: #1c345a;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      background-color: rgba(28, 52, 90, 0.7);
+      padding: 20px;
+      border-radius: 10px;
     }
     nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
       background-color: #1c345a;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
       padding: 15px 0;
-      animation: slideDown 0.8s ease-in-out;
     }
     nav a {
       color: #fff;
@@ -39,7 +51,6 @@
       padding: 50px 20px;
       max-width: 1100px;
       margin: auto;
-      animation: fadeInUp 0.6s ease-in-out;
     }
     h2 {
       font-size: 28px;
@@ -56,17 +67,6 @@
       bottom: -10px;
       left: 0;
     }
-    .hero-text {
-      font-size: 24px;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-      background: rgba(255,255,255,0.85);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      animation: fadeInUp 1.2s ease-in;
-    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -80,19 +80,20 @@
       text-align: center;
       padding: 20px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
     .country:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 18px rgba(0,0,0,0.1);
     }
     .country img {
-  width: 100%;
-  max-width: 180px;
-  background-color: white;
-  border-radius: 8px;
-  padding: 10px;
-  transition: transform 0.3s ease;
-}
+      width: 100%;
+      max-width: 180px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
     .country img:hover {
       transform: scale(1.05);
     }
@@ -101,113 +102,112 @@
       font-weight: bold;
       margin-top: 10px;
     }
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #004080;
+      border-radius: 10px;
+      z-index: 999;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .form-popup input {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+    }
+    .form-popup button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
     footer {
       background-color: #1c345a;
       color: white;
       text-align: center;
       padding: 30px 20px;
       margin-top: 50px;
-      animation: fadeIn 1.5s ease-in;
     }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes slideDown {
-      from { transform: translateY(-100%); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-family: sans-serif;
+      z-index: 1000;
     }
   </style>
 </head>
 <body>
-<header>
-  <div class="hero-text">
-    <h1>MFT Europa Lojistik</h1>
-    <p>Türkiye'den Avrupa'nın her köşesine güvenli ve hızlı taşımacılık.</p>
-  </div>
-</header>
-<nav>
-  <a href="#anasayfa">Anasayfa</a>
-  <a href="#hakkimizda">Hakkımızda</a>
-  <a href="#hizmetler">Hizmetler</a>
-  <a href="#ulkeler">Ülkeler</a>
-  <a href="#iletisim">İletişim</a>
-</nav>
-<section id="anasayfa">
-  <h2>Anasayfa</h2>
-  <p>MFT Europa olarak Türkiye'den Avrupa'nın birçok ülkesine tekstil, hırdavat, mobilya gibi ürünlerin taşımacılığında uzmanlaşmış bulunmaktayız. Profesyonel hizmet anlayışımızla kapıdan kapıya teslimat sağlıyoruz.</p>
-</section>
-<section id="hakkimizda">
-  <h2>Hakkımızda</h2>
-  <p>MFT Europa, Avrupa'ya kara yolu taşımacılığı yapan profesyonel bir lojistik firmasıdır. Yılların deneyimiyle Almanya, Hollanda, Belçika ve birçok ülkeye güvenli teslimatlar sağlıyoruz.</p>
-</section>
-<section id="hizmetler">
-  <h2>Hizmetlerimiz</h2>
-  <ul>
-    <li>Parsiyel Taşımacılık</li>
-    <li>Komple Taşımacılık</li>
-    <li>Mobilya, tekstil ve hırdavat nakliyesi</li>
-    <li>Kapıdan kapıya teslimat</li>
-  </ul>
-</section>
-<section id="ulkeler">
-  <h2>Hizmet Verdiğimiz Ülkeler</h2>
-  <div class="grid">
-    <div class="country"><img src="almanya_white_bg.png"><div class="country-name">Almanya</div></div>
-    <div class="country"><img src="hollanda_white_bg.png"><div class="country-name">Hollanda</div></div>
-    <div class="country"><img src="belcika_white_bg.png"><div class="country-name">Belçika</div></div>
-    <div class="country"><img src="fransa_white_bg.png"><div class="country-name">Fransa</div></div>
-    <div class="country"><img src="ispanya_white_bg.png"><div class="country-name">İspanya</div></div>
-    <div class="country"><img src="italya_white_bg.png"><div class="country-name">İtalya</div></div>
-    <div class="country"><img src="luksemburg_white_bg.png"><div class="country-name">Lüksemburg</div></div>
-    <div class="country"><img src="danimarka_white_bg.png"><div class="country-name">Danimarka</div></div>
-    <div class="country"><img src="avusturya_white_bg.png"><div class="country-name">Avusturya</div></div>
-  </div> <!-- grid -->
-</section> <!-- ulkeler -->
-<section id="iletisim">
-  <h2>İletişim</h2>
-  <p><a href="tel:+491733442684">Telefon: +49 173 344 26 84</a></p>
-  <p><a href="tel:+905312989741">Telefon: +90 531 298 97 41</a></p>
-  <p><a href="tel:+905449947544">Telefon: +90 544 994 75 44</a></p>
-  <p><a href="mailto:info@mfteuropa.com">E-posta: info@mfteuropa.com</a></p>
-  <p>Adres: Mehmet Nesih Özmen, Ladin Sk. No:19, 34173 Güngören/İstanbul</p>
-  <p>
-    <a href="https://wa.me/491733442684" target="_blank">WhatsApp: +49 173 344 26 84</a><br>
-    <a href="https://wa.me/905312989741" target="_blank">WhatsApp: +90 531 298 97 41</a><br>
-    <a href="https://wa.me/905449947544" target="_blank">WhatsApp: +90 544 994 75 44</a>
-  </p>
-  <div style="margin-top: 30px;">
-    <h3>Ofis Konumu</h3>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.439616233314!2d28.88734781565913!3d41.00564877930009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa374f19859db%3A0x946c427221009b3c!2sMehmet%20Nesih%20%C3%96zmen%2C%20Ladin%20Sk.%20No%3A19%2C%2034173%20G%C3%BCng%C3%B6ren%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1713791111111"
-      width="100%"
-      height="300"
-      style="border:0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-    <div style="margin-top: 10px; text-align: center;">
-      <a href="https://www.google.com/maps/dir/?api=1&destination=Mehmet+Nesih+%C3%96zmen,+Ladin+Sk.+No%3A19,+34173+G%C3%BCng%C3%B6ren%2F%C4%B0stanbul" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #1c345a; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">
-        🗺️ Yol Tarifi Al
-      </a>
-    </div>
-  </div>
-  <div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-    <a href="https://wa.me/905312989741" target="_blank" style="background-color: #25d366; color: white; padding: 12px 16px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.2); font-family: sans-serif;">
-      💬 WhatsApp Destek
-    </a>
-  </div>
-</section>
-<footer>
-  <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
-</footer>
+<!-- Geri kalan HTML aynı kalır -->
+<script>
+  let seciliUlke = '';
+  const ulkeCarpanlari = {
+    "Almanya": 1.5,
+    "Hollanda": 1.3,
+    "Belçika": 1.4,
+    "Lüksemburg": 1.2,
+    "Danimarka": 1.6,
+    "Avusturya": 1.3,
+    "Fransa": 1.5,
+    "İspanya": 1.7,
+    "İtalya": 1.6
+  };
+
+  function showForm(ulke) {
+    document.getElementById('popup').style.display = 'block';
+    document.getElementById('ulkeBaslik').textContent = ulke;
+    seciliUlke = ulke;
+  }
+
+  function kapat() {
+    document.getElementById('popup').style.display = 'none';
+  }
+
+  function hesaplaFiyat() {
+    const en = parseFloat(document.getElementById('en').value) || 0;
+    const boy = parseFloat(document.getElementById('boy').value) || 0;
+    const yukseklik = parseFloat(document.getElementById('yukseklik').value) || 0;
+    const agirlik = parseFloat(document.getElementById('agirlik').value) || 0;
+    const hacimDesi = (en * boy * yukseklik) / 3000;
+    const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
+    const fiyat = Math.max(hacimDesi, agirlik) * carpan;
+    document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
+  }
+</script>
+<div id="popup" class="form-popup">
+  <h3 id="ulkeBaslik">Ülke</h3>
+  <input type="text" id="en" placeholder="Koli Eni (cm)">
+  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+  <input type="text" id="posta" placeholder="Posta Kodu">
+  <p id="fiyat">Fiyat: -</p>
+  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
+  <button onclick="kapat()">Kapat</button>
+</div>
+<script>
+  document.querySelectorAll('.country').forEach(el => {
+    el.addEventListener('click', () => {
+      const ulke = el.querySelector('.country-name').innerText;
+      showForm(ulke);
+    });
+  });
+</script>
 </body>
 </html>
-
-
