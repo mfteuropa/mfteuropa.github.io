@@ -232,6 +232,20 @@
 <footer>
   <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
 </footer>
+<!-- Fiyat Hesaplama Formu -->
+<div id="popup" class="form-popup">
+  <h3 id="ulkeBaslik">Ülke</h3>
+  <input type="text" id="en" placeholder="Koli Eni (cm)">
+  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+  <input type="text" id="posta" placeholder="Posta Kodu">
+  <p id="fiyat">Fiyat: -</p>
+  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
+  <button onclick="kapat()">Kapat</button>
+</div>
+
 <script>
   let seciliUlke = '';
   const ulkeCarpanlari = {
@@ -245,14 +259,17 @@
     "İspanya": 1.7,
     "İtalya": 1.6
   };
+
   function showForm(ulke) {
     document.getElementById('popup').style.display = 'block';
     document.getElementById('ulkeBaslik').textContent = ulke;
     seciliUlke = ulke;
   }
+
   function kapat() {
     document.getElementById('popup').style.display = 'none';
   }
+
   function hesaplaFiyat() {
     const en = parseFloat(document.getElementById('en').value) || 0;
     const boy = parseFloat(document.getElementById('boy').value) || 0;
@@ -263,10 +280,14 @@
     const fiyat = Math.max(hacimDesi, agirlik) * carpan;
     document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
   }
-  document.querySelectorAll('.country').forEach(el => {
-    el.addEventListener('click', () => {
-      const ulke = el.querySelector('.country-name').innerText;
-      showForm(ulke);
+
+  // Formu tetiklemek için tıklama olayını ülke kutularına bağla
+  document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll('.country').forEach(el => {
+      el.addEventListener('click', () => {
+        const ulke = el.querySelector('.country-name').innerText;
+        showForm(ulke);
+      });
     });
   });
 </script>
