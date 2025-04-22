@@ -6,17 +6,8 @@
   <title>MFT Europa - International Logistics</title>
   <style>
     * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: url('banner.jpg') center/cover no-repeat;
-      height: 450px;
-      background-color: #004080;
-    }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }
+    header { background: url('banner.jpg') center/cover no-repeat; height: 450px; background-color: #004080; }
     nav {
       background-color: #004080;
       display: flex;
@@ -46,24 +37,12 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: #004080;
-    }
+    h2 { color: #004080; }
     .grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 30px;
       margin-top: 40px;
-    }
-    @media (max-width: 768px) {
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (max-width: 480px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
     .country {
       background: white;
@@ -82,9 +61,7 @@
       cursor: pointer;
       transition: transform 0.3s ease;
     }
-    .country img:hover {
-      transform: scale(1.05);
-    }
+    .country img:hover { transform: scale(1.05); }
     .country-name {
       margin-top: 10px;
       font-size: 18px;
@@ -128,9 +105,7 @@
   </style>
 </head>
 <body>
-
 <header></header>
-
 <nav>
   <a href="#anasayfa">Anasayfa</a>
   <a href="#hakkimizda">Hakkımızda</a>
@@ -139,101 +114,22 @@
   <a href="#iletisim">İletişim</a>
   <a href="#teklif">Teklif Al</a>
 </nav>
-
 <section id="anasayfa">
   <h2>Anasayfa</h2>
   <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine lojistik hizmet sunuyoruz.</p>
 </section>
-
 <section id="teklif">
   <h2>Teklif Al</h2>
   <p>Ülke seçin ve koli bilgilerinizi girerek fiyat hesaplayın.</p>
-
   <div class="grid">
-    <div class="country" onclick="showForm('Almanya')"><img src="almanya.jpg"><div class="country-name">Almanya</div></div>
-    <div class="country" onclick="showForm('Belçika')"><img src="belçika.jpg"><div class="country-name">Belçika</div></div>
-    <div class="country" onclick="showForm('Hollanda')"><img src="hollanda.jpg"><div class="country-name">Hollanda</div></div>
-    <div class="country" onclick="showForm('Fransa')"><img src="fransa.jpg"><div class="country-name">Fransa</div></div>
-    <div class="country" onclick="showForm('İspanya')"><img src="ispanya.jpg"><div class="country-name">İspanya</div></div>
-    <div class="country" onclick="showForm('İtalya')"><img src="italya.jpg"><div class="country-name">İtalya</div></div>
-    <div class="country" onclick="showForm('Lüksemburg')"><img src="lüksemburg.jpg"><div class="country-name">Lüksemburg</div></div>
-    <div class="country" onclick="showForm('Danimarka')"><img src="danimarka.jpg"><div class="country-name">Danimarka</div></div>
-    <div class="country" onclick="showForm('Avusturya')"><img src="avusturya.jpg"><div class="country-name">Avusturya</div></div>
+    <div class="country" onclick="showForm('Almanya')"><img src="images/almanya_white_bg.jpg" alt="Almanya"><div class="country-name">Almanya</div></div>
+    <div class="country" onclick="showForm('Belçika')"><img src="images/belcika_white_bg.jpg" alt="Belçika"><div class="country-name">Belçika</div></div>
+    <div class="country" onclick="showForm('Hollanda')"><img src="images/hollanda_white_bg.jpg" alt="Hollanda"><div class="country-name">Hollanda</div></div>
+    <div class="country" onclick="showForm('Fransa')"><img src="images/fransa_white_bg.jpg" alt="Fransa"><div class="country-name">Fransa</div></div>
+    <div class="country" onclick="showForm('İspanya')"><img src="images/ispanya_white_bg.jpg" alt="İspanya"><div class="country-name">İspanya</div></div>
+    <div class="country" onclick="showForm('İtalya')"><img src="images/italya_white_bg.jpg" alt="İtalya"><div class="country-name">İtalya</div></div>
+    <div class="country" onclick="showForm('Lüksemburg')"><img src="images/luksemburg_white_bg.jpg" alt="Lüksemburg"><div class="country-name">Lüksemburg</div></div>
+    <div class="country" onclick="showForm('Danimarka')"><img src="images/danimarka_white_bg.jpg" alt="Danimarka"><div class="country-name">Danimarka</div></div>
+    <div class="country" onclick="showForm('Avusturya')"><img src="images/avusturya_white_bg.jpg" alt="Avusturya"><div class="country-name">Avusturya</div></div>
   </div>
 </section>
-
-<section id="hakkimizda">
-  <h2>Hakkımızda</h2>
-  <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Avrupa'ya lojistik hizmeti sunar.</p>
-</section>
-
-<section id="misyon">
-  <h2>Misyon</h2>
-  <p>Güvenli, zamanında ve ekonomik taşımacılık sağlamak.</p>
-</section>
-
-<section id="vizyon">
-  <h2>Vizyon</h2>
-  <p>Avrupa'da lojistik alanında lider olmak.</p>
-</section>
-
-<section id="iletisim">
-  <h2>İletişim</h2>
-  <p>Telefon: +49 xxx xxx xxxx<br>E-posta: info@mfteuropa.com<br>Adres: Almanya</p>
-</section>
-
-<div id="popup" class="form-popup">
-  <h3 id="ulkeBaslik">Ülke</h3>
-  <input type="text" id="en" placeholder="Koli Eni (cm)">
-  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
-  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
-  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
-  <input type="text" id="posta" placeholder="Posta Kodu">
-  <p id="fiyat">Fiyat: -</p>
-  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
-  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
-  <button onclick="kapat()">Kapat</button>
-</div>
-
-<footer>
-  <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
-</footer>
-
-<script>
-  let seciliUlke = '';
-  const ulkeCarpanlari = {
-    "Almanya": 1.5,
-    "Hollanda": 1.3,
-    "Belçika": 1.4,
-    "Lüksemburg": 1.2,
-    "Danimarka": 1.6,
-    "Avusturya": 1.3,
-    "Fransa": 1.5,
-    "İspanya": 1.7,
-    "İtalya": 1.6
-  };
-
-  function showForm(ulke) {
-    document.getElementById('popup').style.display = 'block';
-    document.getElementById('ulkeBaslik').textContent = ulke;
-    seciliUlke = ulke;
-  }
-
-  function kapat() {
-    document.getElementById('popup').style.display = 'none';
-  }
-
-  function hesaplaFiyat() {
-    const en = parseFloat(document.getElementById('en').value) || 0;
-    const boy = parseFloat(document.getElementById('boy').value) || 0;
-    const yukseklik = parseFloat(document.getElementById('yukseklik').value) || 0;
-    const agirlik = parseFloat(document.getElementById('agirlik').value) || 0;
-    const hacimDesi = (en * boy * yukseklik) / 3000;
-    const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
-    const fiyat = Math.max(hacimDesi, agirlik) * carpan;
-    document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
-  }
-</script>
-
-</body>
-</html>
