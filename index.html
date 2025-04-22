@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFT Europa - International Logistics</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -28,8 +26,7 @@
       gap: 30px;
       padding: 10px 0;
     }
-    nav a,
-    nav button {
+    nav a, nav button {
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -38,8 +35,7 @@
       cursor: pointer;
       font-size: 16px;
     }
-    nav button:hover,
-    nav a:hover {
+    nav button:hover, nav a:hover {
       text-decoration: underline;
     }
     section {
@@ -93,7 +89,6 @@
       margin-top: 10px;
       font-size: 18px;
       font-weight: bold;
-      font-family: sans-serif;
     }
     .form-popup {
       display: none;
@@ -142,48 +137,49 @@
   <a href="#misyon">Misyon</a>
   <a href="#vizyon">Vizyon</a>
   <a href="#iletisim">İletişim</a>
-  <button onclick="showForm('Teklif Al')">Teklif Al</button>
+  <a href="#teklif">Teklif Al</a>
 </nav>
 
-    <div class="country" onclick="showForm('İtalya')">
-      <img src="italya.jpg" alt="İtalya" />
-      <div class="country-name">İtalya</div>
-    </div>
-    <div class="country" onclick="showForm('Lüksemburg')">
-      <img src="lüksemburg.jpg" alt="Lüksemburg" />
-      <div class="country-name">Lüksemburg</div>
-    </div>
-    <div class="country" onclick="showForm('Danimarka')">
-      <img src="danimarka.jpg" alt="Danimarka" />
-      <div class="country-name">Danimarka</div>
-    </div>
-    <div class="country" onclick="showForm('Avusturya')">
-      <img src="avusturya.jpg" alt="Avusturya" />
-      <div class="country-name">Avusturya</div>
-    </div>
+<section id="anasayfa">
+  <h2>Anasayfa</h2>
+  <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine lojistik hizmet sunuyoruz.</p>
+</section>
+
+<section id="teklif">
+  <h2>Teklif Al</h2>
+  <p>Ülke seçin ve koli bilgilerinizi girerek fiyat hesaplayın.</p>
+
+  <div class="grid">
+    <div class="country" onclick="showForm('Almanya')"><img src="almanya.jpg"><div class="country-name">Almanya</div></div>
+    <div class="country" onclick="showForm('Belçika')"><img src="belçika.jpg"><div class="country-name">Belçika</div></div>
+    <div class="country" onclick="showForm('Hollanda')"><img src="hollanda.jpg"><div class="country-name">Hollanda</div></div>
+    <div class="country" onclick="showForm('Fransa')"><img src="fransa.jpg"><div class="country-name">Fransa</div></div>
+    <div class="country" onclick="showForm('İspanya')"><img src="ispanya.jpg"><div class="country-name">İspanya</div></div>
+    <div class="country" onclick="showForm('İtalya')"><img src="italya.jpg"><div class="country-name">İtalya</div></div>
+    <div class="country" onclick="showForm('Lüksemburg')"><img src="lüksemburg.jpg"><div class="country-name">Lüksemburg</div></div>
+    <div class="country" onclick="showForm('Danimarka')"><img src="danimarka.jpg"><div class="country-name">Danimarka</div></div>
+    <div class="country" onclick="showForm('Avusturya')"><img src="avusturya.jpg"><div class="country-name">Avusturya</div></div>
   </div>
 </section>
 
 <section id="hakkimizda">
   <h2>Hakkımızda</h2>
-  <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Hollanda, Belçika, Fransa ve çevre ülkelere lojistik hizmeti sunmaktadır. Kalite, zamanlama ve müşteri memnuniyeti temel ilkelerimizdir.</p>
+  <p>Almanya merkezli firmamız, yılların verdiği tecrübeyle Avrupa'ya lojistik hizmeti sunar.</p>
 </section>
 
 <section id="misyon">
   <h2>Misyon</h2>
-  <p>Güvenli, zamanında ve ekonomik taşımacılık ile müşterilerimize değer katmak.</p>
+  <p>Güvenli, zamanında ve ekonomik taşımacılık sağlamak.</p>
 </section>
 
 <section id="vizyon">
   <h2>Vizyon</h2>
-  <p>Avrupa'da lojistik alanında lider ve örnek bir firma olmak.</p>
+  <p>Avrupa'da lojistik alanında lider olmak.</p>
 </section>
 
 <section id="iletisim">
   <h2>İletişim</h2>
-  <p>Telefon: +49 xxx xxx xxxx</p>
-  <p>E-posta: info@mfteuropa.com</p>
-  <p>Adres: Almanya, [firma adresiniz]</p>
+  <p>Telefon: +49 xxx xxx xxxx<br>E-posta: info@mfteuropa.com<br>Adres: Almanya</p>
 </section>
 
 <div id="popup" class="form-popup">
