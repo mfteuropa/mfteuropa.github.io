@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFT Europa - Lojistik</title>
   <style>
     * { box-sizing: border-box; }
@@ -136,24 +136,67 @@
       padding: 30px 20px;
       margin-top: 50px;
     }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      font-family: sans-serif;
-      z-index: 1000;
-    }
   </style>
 </head>
 <body>
-<!-- Geri kalan HTML aynı kalır -->
+<header>
+  <h1>MFT Europa Lojistik</h1>
+</header>
+<nav>
+  <a href="#anasayfa">Anasayfa</a>
+  <a href="#hakkimizda">Hakkımızda</a>
+  <a href="#hizmetler">Hizmetler</a>
+  <a href="#ulkeler">Ülkeler</a>
+  <a href="#iletisim">İletişim</a>
+</nav>
+<section id="anasayfa">
+  <h2>Anasayfa</h2>
+  <p>MFT Europa olarak Türkiye'den Avrupa'nın birçok ülkesine tekstil, hırdavat, mobilya gibi ürünlerin taşımacılığında uzmanlaşmış bulunmaktayız. Profesyonel hizmet anlayışımızla kapıdan kapıya teslimat sağlıyoruz.</p>
+</section>
+
+<section id="hakkimizda">
+  <h2>Hakkımızda</h2>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 30px;">
+    <img src="about_us.jpg" alt="Hakkımızda Görseli" style="max-width: 100%; width: 400px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+    <div style="flex: 1; min-width: 280px;">
+      <p>MFT Europa olarak, Avrupa'nın dört bir yanına taşımacılık hizmeti sunan dinamik ve güvenilir bir lojistik firmasıyız. 10 yılı aşkın süredir sektörde kazandığımız deneyim ve uzman kadromuz sayesinde, müşterilerimize kaliteli ve zamanında teslimat garantisi sağlıyoruz. Profesyonel ekibimiz, taşımacılık süreçlerinde karşılaşılabilecek her türlü zorluğu başarıyla yönetme kabiliyetine sahiptir.</p>
+      <p>Almanya merkezli operasyonlarımız, Avrupa'nın tüm önemli noktalarına entegre taşımacılık çözümleri sunar. Müşteri memnuniyetini esas alan yaklaşımımız ile sizlere en ekonomik, en hızlı ve en güvenilir hizmeti sunmak için çalışıyoruz. Taşımacılıkta kalite, şeffaflık ve çözüm odaklılık bizim temel ilkelerimizdir.</p>
+    </div>
+  </div>
+</section>
+
+<section id="ulkeler">
+  <h2>Hizmet Verdiğimiz Ülkeler</h2>
+  <div class="grid">
+    <div class="country"><img src="almanya_white_bg.png"><div class="country-name">Almanya</div></div>
+    <div class="country"><img src="hollanda_white_bg.png"><div class="country-name">Hollanda</div></div>
+    <div class="country"><img src="belcika_white_bg.png"><div class="country-name">Belçika</div></div>
+    <div class="country"><img src="fransa_white_bg.png"><div class="country-name">Fransa</div></div>
+    <div class="country"><img src="ispanya_white_bg.png"><div class="country-name">İspanya</div></div>
+    <div class="country"><img src="italya_white_bg.png"><div class="country-name">İtalya</div></div>
+    <div class="country"><img src="luksemburg_white_bg.png"><div class="country-name">Lüksemburg</div></div>
+    <div class="country"><img src="danimarka_white_bg.png"><div class="country-name">Danimarka</div></div>
+    <div class="country"><img src="avusturya_white_bg.png"><div class="country-name">Avusturya</div></div>
+  </div>
+</section>
+
+<div id="popup" class="form-popup">
+  <h3 id="ulkeBaslik">Ülke</h3>
+  <input type="text" id="en" placeholder="Koli Eni (cm)">
+  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+  <input type="text" id="posta" placeholder="Posta Kodu">
+  <p id="fiyat">Fiyat: -</p>
+  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
+  <button onclick="kapat()">Kapat</button>
+</div>
+
+<footer>
+  <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
+</footer>
+
 <script>
   let seciliUlke = '';
   const ulkeCarpanlari = {
@@ -188,20 +231,7 @@
     const fiyat = Math.max(hacimDesi, agirlik) * carpan;
     document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
   }
-</script>
-<div id="popup" class="form-popup">
-  <h3 id="ulkeBaslik">Ülke</h3>
-  <input type="text" id="en" placeholder="Koli Eni (cm)">
-  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
-  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
-  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
-  <input type="text" id="posta" placeholder="Posta Kodu">
-  <p id="fiyat">Fiyat: -</p>
-  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
-  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
-  <button onclick="kapat()">Kapat</button>
-</div>
-<script>
+
   document.querySelectorAll('.country').forEach(el => {
     el.addEventListener('click', () => {
       const ulke = el.querySelector('.country-name').innerText;
