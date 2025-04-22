@@ -3,133 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MFT Europa - International Logistics</title>
+  <title>MFT Europa - Lojistik</title>
   <style>
     * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #f9f9f9; color: #333; }
-    header { background: url('banner.jpg') center/cover no-repeat; height: 450px; background-color: #004080; }
-    nav {
-      background-color: #004080;
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
+    header {
+      background: url('banner.jpg') center/cover no-repeat;
+      height: 480px;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
-      gap: 30px;
-      padding: 10px 0;
+      justify-content: center;
     }
-    nav a, nav button {
-      color: white;
+    nav {
+      background-color: #1c345a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 15px 0;
+    }
+    nav a {
+      color: #fff;
+      font-weight: 600;
       text-decoration: none;
-      font-weight: bold;
-      background: none;
-      border: none;
-      cursor: pointer;
       font-size: 16px;
+      transition: 0.3s;
     }
-    nav button:hover, nav a:hover {
-      text-decoration: underline;
+    nav a:hover {
+      color: #ffcc00;
     }
     section {
-      padding: 40px;
-      max-width: 1000px;
-      margin: 40px auto 50px auto;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
     }
-    h2 { color: #004080; }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #1c345a;
+    }
+    .hero-text {
+      font-size: 24px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+      background: rgba(255,255,255,0.8);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 30px;
       margin-top: 40px;
     }
     .country {
       background: white;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
       text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
     }
     .country img {
       width: 100%;
-      max-width: 200px;
-      height: auto;
-      background-color: white;
-      border-radius: 10px;
+      max-width: 180px;
+      background: #fff;
+      border-radius: 8px;
       padding: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease;
     }
-    .country img:hover { transform: scale(1.05); }
+    .country:hover {
+      transform: scale(1.03);
+    }
     .country-name {
-      margin-top: 10px;
       font-size: 18px;
       font-weight: bold;
-    }
-    .form-popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      background-color: #fff;
-      padding: 20px;
-      border: 2px solid #004080;
-      border-radius: 10px;
-      z-index: 999;
-      width: 90%;
-      max-width: 320px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .form-popup input {
-      width: 100%;
-      margin: 5px 0;
-      padding: 8px;
-    }
-    .form-popup button {
       margin-top: 10px;
-      padding: 10px;
-      background-color: #004080;
-      color: white;
-      border: none;
-      cursor: pointer;
-      width: 100%;
     }
     footer {
-      background-color: #00264d;
+      background-color: #1c345a;
       color: white;
       text-align: center;
-      padding: 20px;
+      padding: 30px 20px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-<header></header>
+<header>
+  <div class="hero-text">
+    <h1>MFT Europa Lojistik</h1>
+    <p>Türkiye'den Avrupa'nın her köşesine güvenli ve hızlı taşımacılık.</p>
+  </div>
+</header>
 <nav>
-  <a href="#anasayfa">Anasayfa</a>
   <a href="#hakkimizda">Hakkımızda</a>
-  <a href="#misyon">Misyon</a>
-  <a href="#vizyon">Vizyon</a>
+  <a href="#hizmetler">Hizmetler</a>
+  <a href="#ulkeler">Ülkeler</a>
   <a href="#iletisim">İletişim</a>
-  <a href="#teklif">Teklif Al</a>
 </nav>
-<section id="anasayfa">
-  <h2>Anasayfa</h2>
-  <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine lojistik hizmet sunuyoruz.</p>
+<section id="hakkimizda">
+  <h2>Hakkımızda</h2>
+  <p>MFT Europa, Avrupa'ya kara yolu taşımacılığı yapan profesyonel bir lojistik firmasıdır. Yılların deneyimiyle Almanya, Hollanda, Belçika ve birçok ülkeye güvenli teslimatlar sağlıyoruz.</p>
 </section>
-<section id="teklif">
-  <h2>Teklif Al</h2>
-  <p>Ülke seçin ve koli bilgilerinizi girerek fiyat hesaplayın.</p>
+<section id="hizmetler">
+  <h2>Hizmetlerimiz</h2>
+  <ul>
+    <li>Parsiyel Taşımacılık</li>
+    <li>Komple Taşımacılık</li>
+    <li>Mobilya, tekstil ve hırdavat nakliyesi</li>
+    <li>Kapıdan kapıya teslimat</li>
+  </ul>
+</section>
+<section id="ulkeler">
+  <h2>Hizmet Verdiğimiz Ülkeler</h2>
   <div class="grid">
-    <div class="country" onclick="showForm('Almanya')"><img src="images/almanya_white_bg.jpg" alt="Almanya"><div class="country-name">Almanya</div></div>
-    <div class="country" onclick="showForm('Belçika')"><img src="images/belcika_white_bg.jpg" alt="Belçika"><div class="country-name">Belçika</div></div>
-    <div class="country" onclick="showForm('Hollanda')"><img src="images/hollanda_white_bg.jpg" alt="Hollanda"><div class="country-name">Hollanda</div></div>
-    <div class="country" onclick="showForm('Fransa')"><img src="images/fransa_white_bg.jpg" alt="Fransa"><div class="country-name">Fransa</div></div>
-    <div class="country" onclick="showForm('İspanya')"><img src="images/ispanya_white_bg.jpg" alt="İspanya"><div class="country-name">İspanya</div></div>
-    <div class="country" onclick="showForm('İtalya')"><img src="images/italya_white_bg.jpg" alt="İtalya"><div class="country-name">İtalya</div></div>
-    <div class="country" onclick="showForm('Lüksemburg')"><img src="images/luksemburg_white_bg.jpg" alt="Lüksemburg"><div class="country-name">Lüksemburg</div></div>
-    <div class="country" onclick="showForm('Danimarka')"><img src="images/danimarka_white_bg.jpg" alt="Danimarka"><div class="country-name">Danimarka</div></div>
-    <div class="country" onclick="showForm('Avusturya')"><img src="images/avusturya_white_bg.jpg" alt="Avusturya"><div class="country-name">Avusturya</div></div>
+    <div class="country"><img src="images/almanya_white_bg.jpg"><div class="country-name">Almanya</div></div>
+    <div class="country"><img src="images/hollanda_white_bg.jpg"><div class="country-name">Hollanda</div></div>
+    <div class="country"><img src="images/belcika_white_bg.jpg"><div class="country-name">Belçika</div></div>
+    <div class="country"><img src="images/fransa_white_bg.jpg"><div class="country-name">Fransa</div></div>
+    <div class="country"><img src="images/ispanya_white_bg.jpg"><div class="country-name">İspanya</div></div>
+    <div class="country"><img src="images/italya_white_bg.jpg"><div class="country-name">İtalya</div></div>
+    <div class="country"><img src="images/luksemburg_white_bg.jpg"><div class="country-name">Lüksemburg</div></div>
+    <div class="country"><img src="images/danimarka_white_bg.jpg"><div class="country-name">Danimarka</div></div>
+    <div class="country"><img src="images/avusturya_white_bg.jpg"><div class="country-name">Avusturya</div></div>
   </div>
 </section>
+<section id="iletisim">
+  <h2>İletişim</h2>
+  <p>Telefon: +49 xxx xxx xxxx</p>
+  <p>E-posta: info@mfteuropa.com</p>
+  <p>Adres: Almanya, Berlin</p>
+</section>
+<footer>
+  <p>&copy; 2025 MFT Europa. Tüm hakları saklıdır.</p>
+</footer>
+</body>
+</html>
+
