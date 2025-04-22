@@ -49,6 +49,30 @@
       height: auto;
       cursor: pointer;
     }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .country {
+      text-align: center;
+    }
+    .country img {
+      width: 200px;
+      height: auto;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .country img:hover {
+      transform: scale(1.05);
+    }
+    .country-name {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
     .form-popup {
       display: none;
       position: fixed;
@@ -101,8 +125,44 @@
   <h2>Anasayfa</h2>
   <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
 
-  <div class="map-container">
-  
+  <div class="grid">
+    <div class="country" onclick="showForm('Almanya')">
+      <img src="almanya.jpg" alt="Almanya" />
+      <div class="country-name">Almanya</div>
+    </div>
+    <div class="country" onclick="showForm('Belçika')">
+      <img src="belcika.jpg" alt="Belçika" />
+      <div class="country-name">Belçika</div>
+    </div>
+    <div class="country" onclick="showForm('Hollanda')">
+      <img src="hollanda.jpg" alt="Hollanda" />
+      <div class="country-name">Hollanda</div>
+    </div>
+    <div class="country" onclick="showForm('Fransa')">
+      <img src="fransa.jpg" alt="Fransa" />
+      <div class="country-name">Fransa</div>
+    </div>
+    <div class="country" onclick="showForm('İspanya')">
+      <img src="ispanya.jpg" alt="İspanya" />
+      <div class="country-name">İspanya</div>
+    </div>
+    <div class="country" onclick="showForm('İtalya')">
+      <img src="italya.jpg" alt="İtalya" />
+      <div class="country-name">İtalya</div>
+    </div>
+    <div class="country" onclick="showForm('Lüksemburg')">
+      <img src="luksemburg.jpg" alt="Lüksemburg" />
+      <div class="country-name">Lüksemburg</div>
+    </div>
+    <div class="country" onclick="showForm('Danimarka')">
+      <img src="danimarka.jpg" alt="Danimarka" />
+      <div class="country-name">Danimarka</div>
+    </div>
+    <div class="country" onclick="showForm('Avusturya')">
+      <img src="avusturya.jpg" alt="Avusturya" />
+      <div class="country-name">Avusturya</div>
+    </div>
+  </div>
 </section>
 
 <section id="hakkimizda">
