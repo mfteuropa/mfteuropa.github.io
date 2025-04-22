@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MFT Europa - International Logistics</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -14,40 +17,41 @@
     header {
       background: url('banner.jpg') center/cover no-repeat;
       height: 450px;
+      background-color: #004080;
     }
     nav {
       background-color: #004080;
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       gap: 30px;
       padding: 10px 0;
     }
-    nav a {
+    nav a,
+    nav button {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    nav button:hover,
+    nav a:hover {
+      text-decoration: underline;
     }
     section {
       padding: 40px;
       max-width: 1000px;
-      margin: auto;
+      margin: 40px auto 50px auto;
       background-color: white;
-      margin-top: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
     h2 {
       color: #004080;
-    }
-    .map-container {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .map-container img {
-      width: 100%;
-      max-width: 900px;
-      height: auto;
-      cursor: pointer;
     }
     .grid {
       display: grid;
@@ -55,12 +59,30 @@
       gap: 30px;
       margin-top: 40px;
     }
+    @media (max-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 480px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
     .country {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
     }
     .country img {
-      width: 200px;
+      width: 100%;
+      max-width: 200px;
       height: auto;
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
@@ -84,7 +106,8 @@
       border: 2px solid #004080;
       border-radius: 10px;
       z-index: 999;
-      width: 300px;
+      width: 90%;
+      max-width: 320px;
       box-shadow: 0 0 20px rgba(0,0,0,0.3);
     }
     .form-popup input {
@@ -99,13 +122,13 @@
       color: white;
       border: none;
       cursor: pointer;
+      width: 100%;
     }
     footer {
       background-color: #00264d;
       color: white;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
     }
   </style>
 </head>
@@ -119,33 +142,9 @@
   <a href="#misyon">Misyon</a>
   <a href="#vizyon">Vizyon</a>
   <a href="#iletisim">İletişim</a>
+  <button onclick="showForm('Teklif Al')">Teklif Al</button>
 </nav>
 
-<section id="anasayfa">
-  <h2>Anasayfa</h2>
-  <p>MFT Europa olarak, Türkiye'den Avrupa'nın çeşitli ülkelerine tekstil, hırdavat, perde ve mobilya taşımacılığı konusunda profesyonel hizmet sunuyoruz.</p>
-
-  <div class="grid">
-    <div class="country" onclick="showForm('Almanya')">
-      <img src="almanya.jpg" alt="Almanya" />
-      <div class="country-name">Almanya</div>
-    </div>
-    <div class="country" onclick="showForm('Belçika')">
-      <img src="belçika.jpg" alt="Belçika" />
-      <div class="country-name">Belçika</div>
-    </div>
-    <div class="country" onclick="showForm('Hollanda')">
-      <img src="hollanda.jpg" alt="Hollanda" />
-      <div class="country-name">Hollanda</div>
-    </div>
-    <div class="country" onclick="showForm('Fransa')">
-      <img src="fransa.jpg" alt="Fransa" />
-      <div class="country-name">Fransa</div>
-    </div>
-    <div class="country" onclick="showForm('İspanya')">
-      <img src="ispanya.jpg" alt="İspanya" />
-      <div class="country-name">İspanya</div>
-    </div>
     <div class="country" onclick="showForm('İtalya')">
       <img src="italya.jpg" alt="İtalya" />
       <div class="country-name">İtalya</div>
