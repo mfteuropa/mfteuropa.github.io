@@ -12,12 +12,12 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
     .top-bar {
-      background-color: #550000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 4px 0;
-    }
+  background-color: #800000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 0;
+}
     .top-bar .social-icons {
       gap: 10px;
     }
@@ -27,29 +27,34 @@
     nav a { color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; transition: color 0.3s, transform 0.3s; }
     nav a:hover { color: #ffcc00; transform: scale(1.1); }
     section { padding: 50px 20px; max-width: 1100px; margin: auto; }
-    .social-icons { display: flex; justify-content: center; gap: 16px; }
-    .social-icons a {
+   .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.social-icons a {
   width: 32px;
   height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  background-color: #ffffff; /* Beyaz zemin */
-  padding: 6px;
-  border: 1px solid #000; /* İnce siyah çerçeve (isteğe bağlı) */
-  transition: transform 0.2s ease;
+  border-radius: 50%;
+  background-color: white;
+  border: 1px solid #000;
+  padding: 4px;
+  transition: background-color 0.3s, transform 0.3s;
 }
-
 .social-icons a img {
   width: 16px;
   height: 16px;
-  filter: none; /* SVG'yi siyah yapar */
+  filter: brightness(0%) grayscale(100%);
 }
-
 .social-icons a:hover {
-  transform: scale(1.1);
-  background-color: #f0f0f0; /* Hover zemin rengi */
+  transform: scale(1.2);
+  background-color: #ffcc00;
+}
+.social-icons a:hover img {
+  filter: brightness(0%) grayscale(100%);
 }
     .slider {
       width: 100%;
