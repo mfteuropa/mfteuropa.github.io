@@ -12,6 +12,17 @@
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
+    . slider {
+      width: 100%;
+      max-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    .slider img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
     header {
       background: url('banner.jpg') center/cover no-repeat;
       height: 500px;
@@ -156,6 +167,24 @@
       padding: 30px 20px;
       margin-top: 50px;
     }
+    .hero-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-flex img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      font-size: 18px;
+    }
   </style>
 </head>
 <body>
@@ -169,6 +198,14 @@
   <a href="#ulkeler">Ülkeler</a>
   <a href="#iletisim">İletişim</a>
 </nav>
+   <!-- SLIDER BURADA -->
+  <div class="slider">
+    <img src="TIR KUTU GÖRSEL.png" alt="MFT Europa Slider">
+  </div>
+
+  <header>
+    <h1>MFT Europa Lojistik</h1>
+  </header>
 <section id="anasayfa">
   <h2>Anasayfa</h2>
   <p>MFT Europa olarak Türkiye'den Avrupa'nın birçok ülkesine tekstil, hırdavat, mobilya gibi ürünlerin taşımacılığında uzmanlaşmış bulunmaktayız. Profesyonel hizmet anlayışımızla kapıdan kapıya teslimat sağlıyoruz.</p>
