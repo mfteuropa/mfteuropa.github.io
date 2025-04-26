@@ -12,52 +12,14 @@
     * { box-sizing: border-box; }
     body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
     .top-bar {
-  background-color: #800000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 0;
-}
-    .top-bar .social-icons {
-      gap: 10px;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f8f8f8;
+      background-color: #550000;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      padding: 4px 0;
     }
-    .container {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 100%;
-      text-align: center;
-    }
-    h1 {
-      color: #37363d;
-      margin-bottom: 30px;
-    }
-    input[type="text"], input[type="email"], input[type="password"] {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-    }
-    .link {
-      margin-top: 20px;
-      font-size: 14px;
-    }
-    .link a {
-      color: #37363d;
-      text-decoration: underline;
+    .top-bar .social-icons {
+      gap: 10px;
     }
     header { background: url('banner.jpg') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: white; background-color: #1c345a; }
     header h1 { font-size: 36px; margin: 0; background-color: rgba(28, 52, 90, 0.7); padding: 20px; border-radius: 10px; }
@@ -65,35 +27,30 @@
     nav a { color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; transition: color 0.3s, transform 0.3s; }
     nav a:hover { color: #ffcc00; transform: scale(1.1); }
     section { padding: 50px 20px; max-width: 1100px; margin: auto; }
-   .social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-.social-icons a {
-  width: 32px;
-  height: 32px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: white;
-  border: 1px solid #000;
-  padding: 4px;
-  transition: background-color 0.3s, transform 0.3s;
-}
-.social-icons a img {
-  width: 16px;
-  height: 16px;
-  filter: brightness(0%) grayscale(100%);
-}
-.social-icons a:hover {
-  transform: scale(1.2);
-  background-color: #ffcc00;
-}
-.social-icons a:hover img {
-  filter: brightness(0%) grayscale(100%);
-}
+    .social-icons { display: flex; justify-content: center; gap: 16px; }
+    .social-icons a {
+      width: 24px;
+      height: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #37363d;
+      padding: 4px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .social-icons a img {
+      width: 14px;
+      height: 14px;
+      filter: invert(1);
+    }
+    .social-icons a:hover {
+      transform: scale(1.2);
+      background-color: #ffcc00;
+    }
+    .social-icons a:hover img {
+      filter: invert(20%) sepia(100%) saturate(1000%) hue-rotate(0deg);
+    }
     .slider {
       width: 100%;
       max-height: 500px;
@@ -114,7 +71,7 @@
       text-align: center;
       padding: 20px;
       color: white;
-      background-color: #37363d;
+      background-color: #1c345a;
     }
     header h1 {
       font-size: 36px;
@@ -290,42 +247,33 @@
     .social-icons a img {
       width: 14px;
       height: 14px;
-      filter: grayscale(100%);
+      filter: invert(1);
     }
     .social-icons a:hover {
       transform: scale(1.2);
       background-color: #ffcc00;
     }
     .social-icons a:hover img {
-      filter: grayscale(100%) brightness(0) invert(1);
+      filter: invert(20%) sepia(100%) saturate(1000%) hue-rotate(0deg);
     }
   </style>
 </head>
 <body>
-  <div class="container">
-  <h1>MFT Europa</h1>
-  <input type="text" placeholder="Kullanıcı Adı">
-  <input type="password" placeholder="Şifre">
-  <button>Giriş Yap</button>
-  <div class="link">
-    Hesabınız yok mu? <a href="#">Kayıt Ol</a>
-  </div>
-</div>
   <div class="top-bar">
   <div class="social-icons">
-  <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="E-Posta">
-  </a>
-  <a href="https://instagram.com/mfteuropa" title="Instagram">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-  </a>
-  <a href="https://facebook.com/mfteuropa" title="Facebook">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-  </a>
-  <a href="https://wa.me/905312989741" title="WhatsApp">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
-  </a>
-</div>
+    <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="E-Posta">
+    </a>
+    <a href="https://instagram.com/mfteuropa" title="Instagram">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+    </a>
+    <a href="https://facebook.com/mfteuropa" title="Facebook">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
+    </a>
+    <a href="https://wa.me/905312989741" title="WhatsApp">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
+    </a>
+  </div>
 </div>
 <header>
   <h1>MFT Europa Lojistik</h1>
@@ -470,7 +418,7 @@
     const hacimDesi = (en * boy * yukseklik) / 3000;
     const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
     const fiyat = Math.max(hacimDesi, agirlik) * carpan;
-    document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
+    document.getElementById('fiyat').innerText = Fiyat: €${fiyat.toFixed(2)};
   }
 
   // Formu tetiklemek için tıklama olayını ülke kutularına bağla
@@ -482,12 +430,6 @@
       });
     });
   });
-  document.getElementById("yil").textContent = new Date().getFullYear();
 </script>
-  <footer>
-  <p style="margin: 0; padding: 20px 0; font-size: 14px; color: #bbb;">
-    &copy; <span id="yil"></span> MFT Europa. Tüm Hakları Saklıdır.
-  </p>
-</footer>
 </body>
 </html>
