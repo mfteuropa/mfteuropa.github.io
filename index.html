@@ -416,6 +416,19 @@
     <button onclick="closeLogin()">Kapat</button>
   </div>
 </div>
+
+<div class="popup" id="registerPopup">
+  <div class="popup-content">
+    <h2>Kayıt Ol</h2>
+    <input type="text" placeholder="İsim Soyisim">
+    <input type="tel" placeholder="Telefon Numarası">
+    <input type="email" placeholder="E-Posta">
+    <input type="password" placeholder="Şifre">
+    <input type="password" placeholder="Şifre Tekrar">
+    <button onclick="alert('Kaydınız alındı!')">Kayıt Ol</button>
+    <button onclick="closeRegister()">Kapat</button>
+  </div>
+</div>
  <script>
    function openLogin() {
   document.getElementById("loginPopup").style.display = "flex";
