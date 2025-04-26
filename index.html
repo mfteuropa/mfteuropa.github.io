@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giriş & Kayıt | MFT Europa</title>
   <title>MFT Europa - Lojistik</title>
   <meta name="description" content="MFT Europa - Türkiye'den Avrupa'ya güvenilir ve hızlı lojistik hizmeti. 10 yıllık tecrübe, profesyonel ekip. Parsiyel ve komple taşımacılık.">
   <meta name="keywords" content="lojistik, taşımacılık, avrupa, parsiyel taşımacılık, mft europa, mobilya taşımacılığı, kargo, uluslararası lojistik, mft">
@@ -20,6 +21,59 @@
 }
     .top-bar .social-icons {
       gap: 10px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 {
+      color: #37363d;
+      margin-bottom: 30px;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    button {
+      background-color: #ffffff;
+      color: #37363d;
+      border: 1px solid #37363d;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #f0f0f0;
+    }
+    .link {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .link a {
+      color: #37363d;
+      text-decoration: underline;
     }
     header { background: url('banner.jpg') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: white; background-color: #1c345a; }
     header h1 { font-size: 36px; margin: 0; background-color: rgba(28, 52, 90, 0.7); padding: 20px; border-radius: 10px; }
@@ -264,6 +318,15 @@
   </style>
 </head>
 <body>
+  <div class="container">
+  <h1>MFT Europa</h1>
+  <input type="text" placeholder="Kullanıcı Adı">
+  <input type="password" placeholder="Şifre">
+  <button>Giriş Yap</button>
+  <div class="link">
+    Hesabınız yok mu? <a href="#">Kayıt Ol</a>
+  </div>
+</div>
   <div class="top-bar">
   <div class="social-icons">
   <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta">
