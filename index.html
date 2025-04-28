@@ -448,20 +448,20 @@ function closeRegister() {
   document.getElementById("registerPopup").style.display = "none";
 }
    </script>
-<!-- Fiyat Hesaplama Formu -->
-<div id="popup" class="form-popup">
-  <h3 id="ulkeBaslik">Ülke</h3>
-  <input type="text" id="en" placeholder="Koli Eni (cm)">
-  <input type="text" id="boy" placeholder="Koli Boyu (cm)">
-  <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
-  <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
-  <input type="text" id="posta" placeholder="Posta Kodu">
-  <p id="fiyat">Fiyat: -</p>
-  <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
-  <button onclick="alert('Rezervasyon oluşturuldu')">Rezervasyon Oluştur</button>
-  <button onclick="kapat()">Kapat</button>
+<!-- Fiyat Hesaplama Popup -->
+<div id="fiyatPopup" class="popup">
+  <div class="popup-content">
+    <h2 id="ulkeBaslik">Ülke</h2>
+    <input type="text" id="en" placeholder="Koli Eni (cm)">
+    <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+    <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+    <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+    <input type="text" id="posta" placeholder="Posta Kodu">
+    <p id="fiyat">Fiyat: -</p>
+    <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+    <button onclick="kapatFiyat()">Kapat</button>
+  </div>
 </div>
-
 <script>
   let seciliUlke = '';
   const ulkeCarpanlari = {
