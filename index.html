@@ -553,6 +553,21 @@ document.addEventListener("DOMContentLoaded", function () {
     el.addEventListener('click', () => {
       const ulke = el.querySelector('.country-name').innerText;
       showForm(ulke);
+      function gonderWhatsApp() {
+  const ad = document.getElementById("adSoyad").value.trim();
+  const tel = document.getElementById("telefon").value.trim();
+  const ulke = document.getElementById("ulke").value.trim();
+
+  if (!ad || !tel || !ulke) {
+    alert("Lütfen tüm alanları doldurun.");
+    return;
+  }
+
+  const rezervasyonKodu = `RZ-${Math.floor(10000 + Math.random() * 90000)}`;
+  const mesaj = `📦 Yeni Rezervasyon\nAd Soyad: ${ad}\nTelefon: ${tel}\nÜlke: ${ulke}\nRezervasyon Kodu: ${rezervasyonKodu}`;
+  const whatsappURL = `https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`;
+  window.open(whatsappURL, '_blank');
+}
     });
   });
 });
