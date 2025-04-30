@@ -523,7 +523,8 @@ function hesaplaFiyat() {
   const hacimDesi = (en * boy * yukseklik) / 3000;
   const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
   const fiyat = Math.max(hacimDesi, agirlik) * carpan;
-  document.getElementById('fiyat').innerText = Fiyat: €${fiyat.toFixed(2)};
+  document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
+
 }
   function rezervasyonOlustur() {
   const randomNum = Math.floor(10000 + Math.random() * 90000);
