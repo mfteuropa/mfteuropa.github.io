@@ -503,41 +503,39 @@ const ulkeCarpanlari = {
   "Lüksemburg": 1.2,
   "Danimarka": 1.6
 };
-
-function showForm(ulke) {
-  document.getElementById('fiyatPopup').style.display = 'flex';
-  document.getElementById('ulkeBaslik').textContent = ulke;
-  seciliUlke = ulke;
-}
-
-function kapatFiyat() {
-  document.getElementById('fiyatPopup').style.display = 'none';
-}
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.country').forEach(el => {
+    el.addEventListener('click', () => {
+      const ulke = el.querySelector('.country-name').innerText;
+      document.getElementById('fiyatPopup').style.display = 'flex';
+      document.getElementById('ulkeBaslik').innerText = ulke;
+      seciliUlke = ulke;
+    });
+  });
+});
 
 function hesaplaFiyat() {
-  const en = parseFloat(document.getElementById('en').value) || 0;
-  const boy = parseFloat(document.getElementById('boy').value) || 0;
-  const yukseklik = parseFloat(document.getElementById('yukseklik').value) || 0;
-  const agirlik = parseFloat(document.getElementById('agirlik').value) || 0;
-  const hacimDesi = (en * boy * yukseklik) / 3000;
+  const en = parseFloat(document.getElementById("en").value) || 0;
+  const boy = parseFloat(document.getElementById("boy").value) || 0;
+  const yuk = parseFloat(document.getElementById("yukseklik").value) || 0;
+  const agirlik = parseFloat(document.getElementById("agirlik").value) || 0;
+  const hacimDesi = (en * boy * yuk) / 3000;
   const carpan = ulkeCarpanlari[seciliUlke] || 1.5;
   const fiyat = Math.max(hacimDesi, agirlik) * carpan;
-  document.getElementById('fiyat').innerText = `Fiyat: €${fiyat.toFixed(2)}`;
-
+  document.getElementById("fiyat").innerText = `Fiyat: €${fiyat.toFixed(2)}`;
 }
-  function rezervasyonOlustur() {
+
+function rezervasyonOlustur() {
   const en = document.getElementById("en").value;
   const boy = document.getElementById("boy").value;
-  const yukseklik = document.getElementById("yukseklik").value;
+  const yuk = document.getElementById("yukseklik").value;
   const agirlik = document.getElementById("agirlik").value;
   const posta = document.getElementById("posta").value;
-  const ulke = document.getElementById("ulkeBaslik").textContent;
-
-  const rezervasyonKodu = `RZ-${Math.floor(10000 + Math.random() * 90000)}`;
-  const mesaj = `📦 Rezervasyon\nÜlke: ${ulke}\nEn: ${en} cm\nBoy: ${boy} cm\nYükseklik: ${yukseklik} cm\nAğırlık: ${agirlik} kg\nPosta Kodu: ${posta}\nRezervasyon Kodu: ${rezervasyonKodu}`;
-  const whatsappURL = `https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`;
-  
-  window.open(whatsappURL, '_blank');
+  const ulke = document.getElementById("ulkeBaslik").innerText;
+  const kod = `RZ-${Math.floor(10000 + Math.random() * 90000)}`;
+  const mesaj = `📦 Rezervasyon\nÜlke: ${ulke}\nEn: ${en} cm\nBoy: ${boy} cm\nYükseklik: ${yuk} cm\nAğırlık: ${agirlik} kg\nPosta: ${posta}\nKod: ${kod}`;
+  const url = `https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`;
+  window.open(url, "_blank");
 }
    
 </script>
