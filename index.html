@@ -528,7 +528,7 @@ function hesaplaFiyat() {
 }
   function rezervasyonOlustur() {
   const randomNum = Math.floor(10000 + Math.random() * 90000);
-  const rezervasyonKodu = RZ-${randomNum};
+  const rezervasyonKodu = `RZ-${randomNum}`;
   document.getElementById('rezervasyonSonuc').innerText = Rezervasyon Numaranız: ${rezervasyonKodu};
 }
   
