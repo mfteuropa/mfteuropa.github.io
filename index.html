@@ -358,43 +358,43 @@ button:hover {
 }
      @media (max-width: 768px) {
   header h1 {
-    font-size: 20px;
-    padding: 8px;
-    margin: 0;
-    max-width: 90%;
-  }
+   .top-bar {
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 8px;
+}
 
-  .social-icons {
-    gap: 8px;
-    margin-top: 10px;
-  }
+.social-icons {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
 
-  .social-icons a {
-    width: 30px;
-    height: 30px;
-  }
+.social-icons a {
+  width: 28px;
+  height: 28px;
+}
 
-  .lang-switch {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: rgba(28,52,90,0.9);
-    border-radius: 6px;
-  }
+.lang-switch {
+  position: relative;
+  display: flex;
+  gap: 8px;
+  background: none;
+  padding: 0;
+}
 
-  .whatsapp-button {
-    bottom: 80px; /* YUKARI ALDIK */
-    right: 15px;
-  }
+.lang-switch button {
+  background-color: #1c345a;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  border: 1px solid #ccc;
+}
 
-  .hero-flex img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  header {
-    height: 240px;
-  }
+.lang-switch button.active {
+  background-color: #ffcc00;
+  color: #1c345a;
 }
   </style>
 </head>
