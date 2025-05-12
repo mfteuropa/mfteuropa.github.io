@@ -37,25 +37,27 @@
 }
     .social-icons { display: flex; justify-content: center; gap: 16px; }
     .social-icons a {
-      width: 24px;
-      height: 24px;
+      width: 32px;
+      height: 32px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
       background-color: #37363d;
-      padding: 4px;
       transition: background-color 0.3s, transform 0.3s;
     }
+
     .social-icons a img {
       width: 14px;
       height: 14px;
       filter: invert(1);
     }
+
     .social-icons a:hover {
       transform: scale(1.2);
       background-color: #ffcc00;
     }
+
     .social-icons a:hover img {
       filter: invert(20%) sepia(100%) saturate(1000%) hue-rotate(0deg);
     }
