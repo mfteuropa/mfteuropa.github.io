@@ -9,11 +9,25 @@
   <meta name="author" content="MFT Europa">
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
+     :root {
+      --primary: #1c345a;
+      --secondary: #ffcc00;
+      --background: #f5f5f5;
+      --accent: #2e4a7d;
+      --danger: #8b1f1f;
+    }
+   * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      color: #333;
+    }
+
     .top-bar {
       background-color: #550000;
       display: flex;
+      flex-direction: column;
       align-items: center;
       padding: 6px 10px;
       gap: 10px;
@@ -36,14 +50,14 @@
   margin: auto;
 }
     .social-icons { display: flex; justify-content: center; gap: 16px; }
-    .social-icons a {
+   .social-icons a {
       width: 32px;
       height: 32px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background-color: #37363d;
+      background-color: var(--primary);
       transition: background-color 0.3s, transform 0.3s;
     }
 
@@ -55,7 +69,7 @@
 
     .social-icons a:hover {
       transform: scale(1.2);
-      background-color: #ffcc00;
+      background-color: var(--secondary);
     }
 
     .social-icons a:hover img {
@@ -72,7 +86,7 @@
       display: block;
       object-fit: cover;
     }
-    header {
+   header {
       background: url('banner.jpg') center/cover no-repeat;
       height: 500px;
       display: flex;
@@ -81,8 +95,9 @@
       text-align: center;
       padding: 20px;
       color: white;
-      background-color: #1c345a;
+      background-color: var(--primary);
     }
+
     header h1 {
       font-size: 36px;
       margin: 0;
@@ -94,35 +109,40 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background-color: #37363d;
+      background-color: var(--primary);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 20px;
-      padding: 15px 0;
+      gap: 10px;
+      padding: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
-   nav a {
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 16px;
-  background-color: #2a4266;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: background 0.3s, transform 0.3s;
-}
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 8px 14px;
+      background-color: var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.3s, transform 0.3s;
+    }
 
 nav a:hover {
-  background-color: #ffcc00;
-  color: #1c345a;
-  transform: scale(1.05);
-}
+      background-color: var(--secondary);
+      color: var(--primary);
+      transform: scale(1.05);
+    }
+
     section {
       padding: 50px 20px;
       max-width: 1100px;
       margin: auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
     }
     h2 {
       font-size: 28px;
@@ -343,26 +363,29 @@ button:hover {
     .social-icons a:hover img {
       filter: invert(20%) sepia(100%) saturate(1000%) hue-rotate(0deg);
     }
-    .lang-switch {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  z-index: 2000;
-  background-color: #1c345a;
-  padding: 5px 10px;
-  border-radius: 8px;
-}
-.lang-switch button {
-  background: none;
-  border: none;
-  color: white;
-  font-weight: bold;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.lang-switch button.active {
-  text-decoration: underline;
-}
+   .lang-switch {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      background-color: #550000;
+      padding: 4px 10px;
+      border-radius: 8px;
+    }
+
+    .lang-switch button {
+      background-color: var(--primary);
+      color: white;
+      padding: 6px 12px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .lang-switch button.active {
+      background-color: var(--secondary);
+      color: var(--primary);
+    }
 [data-lang] {
   display: none;
 }
@@ -370,8 +393,11 @@ button:hover {
   display: block;
 }
 @media (max-width: 768px) {
-  header {
-    height: 250px;
+      header { height: 300px; }
+      header h1 { font-size: 24px; padding: 10px; }
+      nav { gap: 8px; justify-content: center; }
+      nav a { font-size: 13px; padding: 8px 12px; }
+      .social-icons a { width: 30px; height: 30px; }
   }
 
   header h1 {
