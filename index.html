@@ -356,49 +356,91 @@ button:hover {
 [data-lang="tr"].active, [data-lang="en"].active {
   display: block;
 }
-     @media (max-width: 768px) {
+@media (max-width: 768px) {
+  header {
+    height: 250px;
+  }
+
   header h1 {
- .top-bar {
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 0;
-}
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 90%;
+  }
 
-.social-icons {
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
 
-.social-icons a {
-  width: 32px;
-  height: 32px;
-}
+  nav a {
+    font-size: 14px;
+  }
 
-.lang-switch {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  background: transparent;
-  padding: 0;
-  position: relative;
-  top: 0;
-  right: 0;
-}
+  section {
+    padding: 30px 15px;
+  }
 
-.lang-switch button {
-  background-color: #1c345a;
-  color: white;
-  padding: 5px 10px;
-  font-size: 13px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
+  .hero-flex {
+    flex-direction: column;
+  }
 
-.lang-switch button.active {
-  background-color: #ffcc00;
-  color: #1c345a;
+  .popup-content, .form-container {
+    width: 95%;
+  }
+
+  .country img {
+    max-width: 100%;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+  }
+
+  .social-icons {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .social-icons a {
+    width: 32px;
+    height: 32px;
+  }
+
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: static;
+    background-color: transparent;
+    margin-top: 10px;
+  }
+
+  .lang-switch button {
+    background-color: #1c345a;
+    color: white;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .lang-switch button.active {
+    background-color: #ffcc00;
+    color: #1c345a;
+  }
+
+  .whatsapp-button {
+    bottom: 80px;
+    right: 15px;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
 }
   </style>
 </head>
