@@ -578,6 +578,18 @@ function rezervasyonOlustur() {
   <footer>
   <p style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. Tüm hakları saklıdır.</p>
 </footer>
-  
+
+  <script>
+  function switchLang(lang) {
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.remove('active');
+      if (el.getAttribute('data-lang') === lang) {
+        el.classList.add('active');
+      }
+    });
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+</script>
 </body>
 </html>
