@@ -357,14 +357,45 @@ button:hover {
   display: block;
 }
      @media (max-width: 768px) {
-      header { height: 300px; }
-      header h1 { font-size: 24px; padding: 10px; }
-      nav { flex-direction: column; gap: 10px; }
-      .hero-flex { flex-direction: column; }
-      .popup-content, .form-container { width: 95%; }
-      .country img { max-width: 100%; }
-      .social-icons a { width: 36px; height: 36px; }
-      nav a { font-size: 14px; }
+  header h1 {
+    font-size: 20px;
+    padding: 8px;
+    margin: 0;
+    max-width: 90%;
+  }
+
+  .social-icons {
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .social-icons a {
+    width: 30px;
+    height: 30px;
+  }
+
+  .lang-switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(28,52,90,0.9);
+    border-radius: 6px;
+  }
+
+  .whatsapp-button {
+    bottom: 80px; /* YUKARI ALDIK */
+    right: 15px;
+  }
+
+  .hero-flex img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  header {
+    height: 240px;
+  }
+}
   </style>
 </head>
 <body>
