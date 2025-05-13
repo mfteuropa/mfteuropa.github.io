@@ -492,6 +492,7 @@ button:hover {
   </style>
 </head>
 <body>
+  
   <div class="lang-switch">
   <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
   <button onclick="switchLang('en')" id="btn-en">EN</button>
@@ -512,10 +513,12 @@ button:hover {
     </a>
   </div>
 </div>
+  
 <header>
   <h1 data-lang="tr" class="active">MFT Europa Lojistik</h1>
 <h1 data-lang="en">MFT Europa Logistics</h1>
 </header>
+  
 <nav>
   <a href="#anasayfa" data-lang="tr" class="active">Anasayfa</a>
   <a href="#anasayfa" data-lang="en">Home</a>
@@ -535,12 +538,14 @@ button:hover {
   <button class="login-button" onclick="openLogin()" style="display:none;">Müşteri Girişi</button>
   <button class="register-button" onclick="openRegister()" style="display:none;">Kayıt Ol</button>
 </nav>
+  
 <section id="anasayfa">
     <h2 data-lang="tr" class="active">Anasayfa</h2>
     <h2 data-lang="en">Home</h2>
     <p data-lang="tr" class="active">MFT Europa olarak Türkiye'den Avrupa'nın birçok ülkesine tekstil, hırdavat, mobilya gibi ürünlerin taşımacılığında uzmanlaşmış bulunmaktayız. Profesyonel hizmet anlayışımızla kapıdan kapıya teslimat sağlıyoruz.</p>
     <p data-lang="en">At MFT Europa, we specialize in the transportation of textiles, hardware, and furniture from Turkey to many European countries. With a professional service approach, we ensure door-to-door delivery.</p>
   </section>
+  
 <section id="hakkimizda">
   <h2 data-lang="tr" class="active">Hakkımızda</h2>
   <h2 data-lang="en">About Us</h2>
@@ -552,6 +557,7 @@ button:hover {
     MFT Europa has been operating in the logistics sector across Europe for over 10 years...
   </p>
 </section>
+  
   <section id="hizmetler">
     <h2 data-lang="tr" class="active">Hizmetlerimiz</h2>
     <h2 data-lang="en">Our Services</h2>
@@ -568,6 +574,7 @@ button:hover {
       <li>Door-to-door delivery</li>
     </ul>
   </section>
+  
   <section id="nedenbiz">
     <h2 data-lang="tr" class="active">Neden MFT Europa?</h2>
     <h2 data-lang="en">Why MFT Europa?</h2>
@@ -584,6 +591,7 @@ button:hover {
       <li>Competitive pricing guarantee</li>
     </ul>
   </section>
+  
 <section id="ulkeler">
   <h2 data-lang="tr" class="active">Hizmet Verdiğimiz Ülkeler </h2>
 <h2 data-lang="en">Countries We Serve</h2>
@@ -599,6 +607,7 @@ button:hover {
     <div class="country"><img src="avusturya_white_bg.png"><div class="country-name">Avusturya</div></div>
   </div>
 </section>
+  
 <section id="iletisim">
   <h2 data-lang="tr" class="active">İletişim</h2>
     <h2 data-lang="en">Contact</h2>
@@ -628,6 +637,7 @@ button:hover {
     </a>
   </div>
 </section>
+  
      <h3 data-lang="tr" class="active">Ofis Konumu</h3>
 <h3 data-lang="en">Office Location</h3>
   <iframe
@@ -668,6 +678,7 @@ button:hover {
     <button onclick="closeRegister()">Kapat</button>
   </div>
 </div>
+  
  <script>
 function openLogin() {
   document.getElementById("loginPopup").style.display = "flex";
