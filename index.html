@@ -489,25 +489,25 @@ button:hover {
     padding: 10px 14px;
   }
 }
-  header {
+ header {
   position: relative;
   height: 500px;
   background: url('banner.jpg') center/cover no-repeat;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
+  text-align: center;
 }
-  header h1 {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(28, 52, 90, 0.7);
-  padding: 16px 24px;
+
+header h1 {
+  margin: 0;
+  background-color: rgba(28, 52, 90, 0.75);
+  color: white;
+  padding: 20px 30px;
   border-radius: 12px;
   font-size: 32px;
-  color: white;
-  z-index: 5;
+  z-index: 10;
+  max-width: 90%;
 }
 
 .lang-switch {
