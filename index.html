@@ -491,20 +491,23 @@ button:hover {
 }
   header {
   position: relative;
-  display: block;
   height: 500px;
   background: url('banner.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
-    header h1 {
+  header h1 {
   position: absolute;
-  bottom: 30px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: rgba(28, 52, 90, 0.6);
-  padding: 12px 20px;
-  border-radius: 10px;
-  color: white;
+  background-color: rgba(28, 52, 90, 0.7);
+  padding: 16px 24px;
+  border-radius: 12px;
   font-size: 32px;
+  color: white;
+  z-index: 5;
 }
 
 .lang-switch {
