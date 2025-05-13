@@ -544,18 +544,21 @@ header h1 {
     padding: 12px 18px;
   }
 }
-  header h1[data-lang], header h2[data-lang] {
+ header h1[data-lang], header h2[data-lang] {
   position: absolute;
   left: 50%;
+  bottom: 80px;
   transform: translateX(-50%);
   background-color: rgba(28, 52, 90, 0.7);
-  padding: 16px 24px;
+  padding: 14px 20px;
   border-radius: 12px;
-  font-size: 32px;
+  font-size: 30px;
   color: white;
   z-index: 5;
-  max-width: 90%;
+  max-width: 80%;
   text-align: center;
+  white-space: normal;
+  word-break: break-word;
 }
     @media (min-width: 769px) {
   header h1[data-lang], header h2[data-lang] {
@@ -563,13 +566,9 @@ header h1 {
     bottom: 60px;
   }
 }
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
   header h1[data-lang], header h2[data-lang] {
-    top: 50%;
-    bottom: auto;
-    transform: translate(-50%, -50%);
-    font-size: 22px;
-    padding: 12px 18px;
+    bottom: 40px;
   }
 }
   </style>
