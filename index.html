@@ -544,11 +544,12 @@ header h1 {
     padding: 12px 18px;
   }
 }
-   header h1[data-lang], header h2[data-lang] {
+  header h1[data-lang], header h2[data-lang] {
   position: absolute;
-  top: 50%;
+  top: auto;
+  bottom: 40px;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translateX(-50%);
   background-color: rgba(28, 52, 90, 0.7);
   padding: 16px 24px;
   border-radius: 12px;
@@ -557,11 +558,6 @@ header h1 {
   z-index: 5;
   max-width: 90%;
   text-align: center;
-}
-    header h1[data-lang], header h2[data-lang] {
-  top: auto;
-  bottom: 40px;
-  transform: translateX(-50%);
 }
   </style>
 </head>
