@@ -694,6 +694,11 @@ button:hover {
     <button onclick="document.getElementById('fiyatPopup').style.display='none'">Kapat</button>
   </div>
 </div>
+    
+  <footer>
+  <p data-lang="tr" class="active" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. Tüm hakları saklıdır.</p>
+<p data-lang="en" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. All rights reserved.</p>
+</footer>
   
    <script>
 function openLogin() {
@@ -768,11 +773,6 @@ function rezervasyonOlustur() {
   const url = `https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`;
   window.open(url, "_blank");
 }
-  
-  <footer>
-  <p data-lang="tr" class="active" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. Tüm hakları saklıdır.</p>
-<p data-lang="en" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. All rights reserved.</p>
-</footer>
 
   function switchLang(lang) {
     document.querySelectorAll('[data-lang]').forEach(el => {
