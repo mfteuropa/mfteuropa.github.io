@@ -605,51 +605,19 @@ header h1 {
 
 @media (max-width: 768px) {
   .slider-container {
-    max-height: 240px;
-  }
-
-  .slider-btn {
-    padding: 8px;
-    font-size: 18px;
-  }
-}
-@media (max-width: 768px) {
-  .slider-container {
     height: auto;
   }
 
   .slide {
     height: auto;
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
   }
 
   .slider-btn {
     top: 50%;
     transform: translateY(-50%);
-    padding: 8px;
-    font-size: 16px;
-  }
-}
-
-  .slider-btn.prev {
-    left: 10px;
-  }
-
-  .slider-btn.next {
-    right: 10px;
-  }
-}
-    @media (max-width: 768px) {
-  .slider-container {
-    height: 240px;
-  }
-
-  .slide {
-    height: 240px;
-    object-fit: cover;
-  }
-
-  .slider-btn {
-    top: 75%;
     padding: 8px;
     font-size: 16px;
   }
