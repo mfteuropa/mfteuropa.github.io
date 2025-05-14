@@ -570,15 +570,15 @@ header h1 {
 }
  .slider-container {
   position: relative;
-  max-width: 100%;
-  height: 500px;
+  width: 100%;
+  max-height: 500px;
   overflow: hidden;
 }
 
 .slide {
   display: none;
   width: 100%;
-  height: 500px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -595,26 +595,24 @@ header h1 {
   border: none;
   padding: 12px;
   cursor: pointer;
-  font-size: 22px;
+  font-size: 24px;
   border-radius: 50%;
-  z-index: 2;
-  transition: background-color 0.3s ease;
+  z-index: 10;
 }
 
-.slider-btn:hover {
-  background-color: rgba(255, 204, 0, 0.9);
-  color: #1c345a;
-}
+.slider-btn.prev { left: 20px; }
+.slider-btn.next { right: 20px; }
 
-.slider-btn.prev {
-  left: 20px;
-}
+@media (max-width: 768px) {
+  .slider-container {
+    max-height: 240px;
+  }
 
-.slider-btn.next {
-  right: 20px;
+  .slider-btn {
+    padding: 8px;
+    font-size: 18px;
+  }
 }
-
-/* ✅ MOBİL UYUMLULUK */
 @media (max-width: 768px) {
   .slider-container {
     height: 280px;
@@ -642,11 +640,12 @@ header h1 {
 <body>
   <header>
     <div class="slider-container">
-  <img src="slider1.png.jpg" class="slide active" alt="Slider 1">
-  <img src="slider2.png.png" class="slide" alt="Slider 2">
-  <img src="slider3.png.png" class="slide" alt="Slider 3">
-  <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
-  <button class="slider-btn next-btn" onclick="nextSlide()">❯</button>
+  <img src="slider1.png" class="slide active-slide" alt="Slider 1">
+  <img src="slider2.png" class="slide" alt="Slider 2">
+  <img src="slider3.png" class="slide" alt="Slider 3">
+
+  <button class="slider-btn prev" onclick="prevSlide()">‹</button>
+  <button class="slider-btn next" onclick="nextSlide()">›</button>
 </div>
   <div class="lang-switch">
   <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
@@ -917,27 +916,27 @@ function rezervasyonOlustur() {
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
-     let currentSlide = 0;
-  const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.classList.remove('active-slide');
-      if (i === index) {
-        slide.classList.add('active-slide');
-      }
-    });
-  }
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active-slide');
+    if (i === index) {
+      slide.classList.add('active-slide');
+    }
+  });
+}
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % slides.length;
-    showSlide(currentSlide);
-  }
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
 
-  function prevSlide() {
-    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-    showSlide(currentSlide);
-  }
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
   setInterval(nextSlide, 6000); // Her 6 saniyede bir geç
 </script>
 </body>
