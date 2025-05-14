@@ -473,7 +473,7 @@ body > div:first-child {
   align-items: center;
   padding: 12px 24px;
   z-index: 10;
-  pointer-events: none; /* tıklanabilirliği sadece içeriğe verir */
+  pointer-events: none;
 }
 
 .social-icons,
@@ -483,16 +483,34 @@ body > div:first-child {
   pointer-events: auto;
 }
 
-.social-icons {
-  margin: 0;
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background-color: #1c345a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.social-icons a img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+}
+
+.social-icons a:hover {
+  background-color: #ffcc00;
+  transform: scale(1.2);
 }
 
 .lang-switch button {
   background-color: var(--primary);
   color: white;
-  border: none;
   padding: 6px 12px;
   border-radius: 6px;
+  border: none;
   cursor: pointer;
   font-weight: bold;
   font-size: 13px;
@@ -509,7 +527,7 @@ body > div:first-child {
   <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
   <button onclick="switchLang('en')" id="btn-en">EN</button>
 </div>
-  <div class="top-bar">
+ <div class="top-bar">
   <div class="social-icons">
     <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" alt="E-Posta">
@@ -523,6 +541,10 @@ body > div:first-child {
     <a href="https://wa.me/905312989741" title="WhatsApp">
       <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" alt="WhatsApp">
     </a>
+  </div>
+  <div class="lang-switch">
+    <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
+    <button onclick="switchLang('en')" id="btn-en">EN</button>
   </div>
 </div>
 <header>
