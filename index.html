@@ -642,7 +642,7 @@ header h1 {
 <body>
   <header>
     <div class="slider-container">
-  <img src="slider1.png.png" class="slide active" alt="Slider 1">
+  <img src="slider1.png.jpg" class="slide active" alt="Slider 1">
   <img src="slider2.png.png" class="slide" alt="Slider 2">
   <img src="slider3.png.png" class="slide" alt="Slider 3">
   <button class="slider-btn prev-btn" onclick="prevSlide()">❮</button>
@@ -938,8 +938,6 @@ function rezervasyonOlustur() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
   }
-
-  // Otomatik geçiş için (isteğe bağlı)
   setInterval(nextSlide, 6000); // Her 6 saniyede bir geç
 </script>
 </body>
