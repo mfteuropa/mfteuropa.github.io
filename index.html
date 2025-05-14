@@ -886,6 +886,30 @@ function rezervasyonOlustur() {
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
+     let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active-slide');
+      if (i === index) {
+        slide.classList.add('active-slide');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  // Otomatik geçiş için (isteğe bağlı)
+  setInterval(nextSlide, 6000); // Her 6 saniyede bir geç
 </script>
 </body>
 </html>
