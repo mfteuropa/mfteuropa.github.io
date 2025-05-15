@@ -777,6 +777,7 @@ function hesaplaFiyat() {
   const kg = agirlik;
 
   let fiyat = "-";
+  let mesaj = "";
 
   if (["Almanya", "Hollanda", "Belçika"].includes(secili)) {
     if (is(50, 80, 50)) {
@@ -793,7 +794,11 @@ function hesaplaFiyat() {
   }
 
   if (fiyat !== "-") {
-    fiyatEl.innerText = "Fiyat: " + fiyat;
+    mesaj = `Fiyat: ${fiyat}`;
+    if (secili === "Almanya") {
+      mesaj += `<br><span style="color:#ff9900; font-size:14px;">Koli ağırlıkları, adres ve uzaklığa göre fiyat değişmektedir.</span>`;
+    }
+    fiyatEl.innerHTML = mesaj;
   } else {
     fiyatEl.innerHTML = `
       <span style="color: red; font-weight: bold;">Lütfen bizimle iletişime geçin</span><br>
