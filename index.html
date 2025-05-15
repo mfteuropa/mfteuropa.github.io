@@ -773,8 +773,11 @@ function hesaplaFiyat() {
   const secili = document.getElementById("ulkeBaslik").innerText.trim();
   const fiyatEl = document.getElementById("fiyat");
 
-  const is = (a, b, c) => en === a && boy === b && yuk === c;
-  const kg = agirlik;
+  const is = (a, b, c) => {
+  const girilen = [en, boy, yuk].sort((x, y) => x - y);
+  const sabit = [a, b, c].sort((x, y) => x - y);
+  return JSON.stringify(girilen) === JSON.stringify(sabit);
+};
 
   let fiyat = "-";
   let mesaj = "";
