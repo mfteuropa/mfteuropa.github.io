@@ -822,7 +822,6 @@ function rezervasyonOlustur() {
   const boy = document.getElementById("boy").value;
   const yuk = document.getElementById("yukseklik").value;
   const agirlik = document.getElementById("agirlik").value;
-  const posta = document.getElementById("posta").value;
   const ulke = document.getElementById("ulkeBaslik").innerText;
   const kod = `RZ-${Math.floor(10000 + Math.random() * 90000)}`;
   const mesaj = `📦 Rezervasyon\nÜlke: ${ulke}\nEn: ${en} cm\nBoy: ${boy} cm\nYükseklik: ${yuk} cm\nAğırlık: ${agirlik} kg\nPosta: ${posta}\nKod: ${kod}`;
