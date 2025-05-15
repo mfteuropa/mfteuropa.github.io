@@ -766,19 +766,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function hesaplaFiyat() {
-  const en = parseFloat(document.getElementById("en").value);
-  const boy = parseFloat(document.getElementById("boy").value);
-  const yuk = parseFloat(document.getElementById("yukseklik").value);
-  const agirlik = parseFloat(document.getElementById("agirlik").value);
+  const en = parseFloat(document.getElementById("en").value) || 0;
+  const boy = parseFloat(document.getElementById("boy").value) || 0;
+  const yuk = parseFloat(document.getElementById("yukseklik").value) || 0;
+  const agirlik = parseFloat(document.getElementById("agirlik").value) || 0;
   const secili = document.getElementById("ulkeBaslik").innerText.trim();
   const fiyatEl = document.getElementById("fiyat");
 
   const is = (a, b, c) => {
-  const girilen = [en, boy, yuk].sort((x, y) => x - y);
-  const sabit = [a, b, c].sort((x, y) => x - y);
-  return JSON.stringify(girilen) === JSON.stringify(sabit);
-};
+    const girilen = [en, boy, yuk].sort((x, y) => x - y);
+    const sabit = [a, b, c].sort((x, y) => x - y);
+    return JSON.stringify(girilen) === JSON.stringify(sabit);
+  };
 
+  const kg = agirlik;
   let fiyat = "-";
   let mesaj = "";
 
