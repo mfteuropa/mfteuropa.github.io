@@ -796,6 +796,13 @@ function hesaplaFiyat() {
       else if (kg > 30 && kg <= 45) fiyat = "60€";
     }
   }
+   else if (["Lüksemburg", "Danimarka", "Avusturya", "Fransa", "İspanya", "İtalya"].includes(secili)) {
+    if (is(50, 80, 50)) {
+      if (kg >= 1 && kg <= 10) fiyat = "50€";
+      else if (kg > 10 && kg <= 20) fiyat = "60€";
+      else if (kg > 20 && kg <= 30) fiyat = "70€";
+    }
+  }
 
   if (fiyat !== "-") {
     mesaj = `Fiyat: ${fiyat}`;
