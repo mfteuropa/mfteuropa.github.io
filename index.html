@@ -550,6 +550,16 @@ body > div:first-child {
   background-color: var(--secondary);
   color: var(--primary);
 }
+    @media (max-width: 768px) {
+  #anasayfa-tanitim {
+    flex-direction: column;
+  }
+
+  #anasayfa-tanitim div {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
   </style>
 </head>
 <body>
@@ -597,12 +607,27 @@ body > div:first-child {
   <button class="login-button" onclick="openLogin()" style="display:none;">Müşteri Girişi</button>
   <button class="register-button" onclick="openRegister()" style="display:none;">Kayıt Ol</button>
 </nav>
-<section id="anasayfa">
-    <h2 data-lang="tr" class="active">Anasayfa</h2>
-    <h2 data-lang="en">Home</h2>
-    <p data-lang="tr" class="active">MFT Europa olarak Türkiye'den Avrupa'nın birçok ülkesine tekstil, hırdavat, mobilya gibi ürünlerin taşımacılığında uzmanlaşmış bulunmaktayız. Profesyonel hizmet anlayışımızla kapıdan kapıya teslimat sağlıyoruz.</p>
-    <p data-lang="en">At MFT Europa, we specialize in the transportation of textiles, hardware, and furniture from Turkey to many European countries. With a professional service approach, we ensure door-to-door delivery.</p>
-  </section>
+<section id="anasayfa-tanitim" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; padding: 40px 20px;">
+  <div style="flex: 1; max-width: 500px; padding: 20px;">
+    <img src="slider2.png.png" alt="Lojistik Yönetimi" style="width: 100%; height: auto; border-radius: 12px;">
+  </div>
+
+  <div style="flex: 1; max-width: 600px; padding: 20px;">
+    <p data-lang="tr" class="active" style="font-size: 18px; line-height: 1.6; color: #333;">
+      <strong>MFT Europa</strong>, Türkiye'den Avrupa'nın birçok ülkesine yönelik uluslararası lojistik hizmetleri sunan profesyonel bir taşımacılık firmasıdır.<br>
+      Başta <strong>tekstil</strong>, <strong>mobilya</strong>, <strong>hırdavat</strong> ve benzeri sektör ürünleri olmak üzere, geniş ürün yelpazesinde uzmanlaşmış bulunmaktayız.<br><br>
+      Alanında deneyimli kadromuz ve Avrupa genelinde kurduğumuz güçlü lojistik ağımız sayesinde, müşterilerimize <strong>kapıdan kapıya teslimat</strong> imkânı sunuyoruz.<br>
+      Her gönderiyi; zamanında, güvenli ve ekonomik koşullarda ulaştırmak temel önceliğimizdir.
+    </p>
+
+    <p data-lang="en" style="font-size: 18px; line-height: 1.6; color: #333;">
+      <strong>MFT Europa</strong> is a professional logistics company offering international transportation services from Turkey to various European countries.<br>
+      We specialize in transporting a wide range of products, particularly in the <strong>textile</strong>, <strong>furniture</strong>, and <strong>hardware</strong> sectors.<br><br>
+      Thanks to our experienced team and robust logistics network across Europe, we offer reliable <strong>door-to-door delivery</strong> services to our customers.<br>
+      Ensuring each shipment arrives on time, safely, and at a competitive cost is our top priority.
+    </p>
+  </div>
+</section>
 <section id="hakkimizda">
   <h2 data-lang="tr" class="active">Hakkımızda</h2>
   <h2 data-lang="en">About Us</h2>
