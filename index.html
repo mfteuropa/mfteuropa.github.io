@@ -864,21 +864,21 @@ function hesaplaFiyat() {
 
   if (["Almanya", "Hollanda", "Belçika"].includes(secili)) {
     if (is(50, 80, 50)) {
-      if (kg >= 20 && kg <= 29) fiyat = "45€";
-      else if (kg > 30 && kg <= 44) fiyat = "55€";
+      if (kg >= 20 && kg <= 30) fiyat = "45€";
+      else if (kg > 30 && kg <= 45) fiyat = "55€";
       else if (kg > 45 && kg <= 60) fiyat = "60€";
     } else if (is(60, 90, 60)) {
-      if (kg > 29 && kg <= 44) fiyat = "60€";
+      if (kg > 30 && kg <= 45) fiyat = "60€";
       else if (kg > 45 && kg <= 60) fiyat = "65€";
     } else if (is(40, 60, 40)) {
-      if (kg >= 10 && kg <= 29) fiyat = "50€";
+      if (kg >= 10 && kg <= 30) fiyat = "50€";
       else if (kg > 30 && kg <= 45) fiyat = "60€";
     }
   }
    else if (["Lüksemburg", "Danimarka", "Avusturya", "Fransa", "İspanya", "İtalya"].includes(secili)) {
     if (is(50, 80, 50)) {
-      if (kg >= 1 && kg <= 9) fiyat = "50€";
-      else if (kg > 10 && kg <= 19) fiyat = "60€";
+      if (kg >= 1 && kg <= 10) fiyat = "50€";
+      else if (kg > 10 && kg <= 20) fiyat = "60€";
       else if (kg > 20 && kg <= 30) fiyat = "70€";
     }
   }
