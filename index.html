@@ -507,20 +507,27 @@ body > div:first-child {
   transform: scale(1.2);
 }
 
+.lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
 .lang-switch button {
-  background-color: var(--primary);
-  color: white;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 14px;
   border: none;
-  cursor: pointer;
+  border-radius: 6px;
+  background-color: #1c345a;
+  color: white;
   font-weight: bold;
-  font-size: 13px;
+  cursor: pointer;
 }
 
 .lang-switch button.active {
-  background-color: var(--secondary);
-  color: var(--primary);
+  background-color: #ffcc00;
+  color: black;
 }
     @media (max-width: 768px) {
   #anasayfa-tanitim {
