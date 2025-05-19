@@ -920,22 +920,18 @@ function rezervasyonOlustur() {
 
  <script>
   function switchLang(lang) {
-    // Tüm öğelerden active class'ı kaldır
     document.querySelectorAll('[data-lang]').forEach(el => {
       el.classList.remove('active');
     });
 
-    // Seçilen dile ait olanlara active class'ı ekle
     document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
       el.classList.add('active');
     });
 
-    // Butonları güncelle
     document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   }
 
-  // Sayfa yüklendiğinde varsayılan olarak Türkçe göster
   document.addEventListener('DOMContentLoaded', () => {
     switchLang('tr');
   });
