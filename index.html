@@ -572,11 +572,6 @@ body > div:first-child {
     </a>
   </div>
    
-<div class="lang-switch" style="margin-top: 8px;">
-  <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
-  <button onclick="switchLang('en')" id="btn-en">EN</button>
-</div>
-   
 <header>
   <h1 data-lang="tr" class="active">MFT Europa Lojistik</h1>
 <h1 data-lang="en">MFT Europa Logistics</h1>
@@ -910,23 +905,5 @@ function rezervasyonOlustur() {
 <p data-lang="en" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. All rights reserved.</p>
 </footer>
 
- <script>
-  function switchLang(lang) {
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      el.classList.remove('active');
-    });
-
-    document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
-      el.classList.add('active');
-    });
-
-    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    switchLang('tr');
-  });
-</script>
 </body>
 </html>
