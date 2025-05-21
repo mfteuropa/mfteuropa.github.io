@@ -549,9 +549,32 @@ body > div:first-child {
     [data-lang] {
   display: none;
 }
-
 [data-lang].active {
   display: block;
+}
+
+/* Dil düğmeleri */
+.lang-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 12px 0;
+}
+
+.lang-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1c345a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.lang-buttons button.active {
+  background-color: #ffcc00;
+  color: #1c345a;
 }
   </style>
 </head>
