@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFT Europa - Lojistik</title>
+  <meta name="description" content="MFT Europa - Türkiye'den Avrupa'ya güvenilir ve hızlı lojistik hizmeti. 10 yıllık tecrübe, profesyonel ekip. Parsiyel ve komple taşımacılık.">
+  <meta name="keywords" content="lojistik, taşımacılık, avrupa, parsiyel taşımacılık, mft europa, mobilya taşımacılığı, kargo, uluslararası lojistik, mft">
+  <meta name="author" content="MFT Europa">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <style>
+     :root {
+      --primary: #1c345a;
+      --secondary: #ffcc00;
+      --background: #f5f5f5;
+      --accent: #2e4a7d;
+      --danger: #8b1f1f;
+    }
+   * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--background);
+      color: #333;
+    }
+
+    .top-bar {
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+    .top-bar .social-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    header { background: url('banner.jpg') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: white; background-color: var(--primary); }
+    header h1 { font-size: 36px; margin: 0; background-color: rgba(28, 52, 90, 0.7); padding: 20px; border-radius: 10px; }
+    nav { position: sticky; top: 0; z-index: 100; background-color: var(--primary); display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 15px 0; }
+    nav a { color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; transition: color 0.3s, transform 0.3s; }
+    nav a:hover { color: var(--secondary); transform: scale(1.1); }
+    section {
+  padding: 30px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+    .social-icons { display: flex; justify-content: center; gap: 16px; }
+   .social-icons a {
+      width: 32px;
+      height: 32px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: var(--primary);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .social-icons a img {
+      width: 14px;
+      height: 14px;
+      filter: invert(1);
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      background-color: var(--secondary);
+    }
+
+    .social-icons a:hover img {
+      filter: invert(20%) sepia(100%) saturate(1000%) hue-rotate(0deg);
+    }
+    .slider {
+      width: 100%;
+      max-height: 500px;
+      overflow: hidden;
+      position: relative;
+    }
+    .slider img {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+   header {
+      background: url('banner.jpg') center/cover no-repeat;
+      height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      color: white;
+      background-color: var(--primary);
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+      background-color: rgba(28, 52, 90, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background-color: var(--primary);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+      padding: 8px 14px;
+      background-color: var(--accent);
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+nav a:hover {
+      background-color: var(--secondary);
+      color: var(--primary);
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #1c345a;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      width: 50px;
+      height: 4px;
+      background: #ffcc00;
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .country {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .country:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+    .country img {
+      width: 100%;
+      max-width: 180px;
+      background-color: white;
+      border-radius: 8px;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+    .country img:hover {
+      transform: scale(1.05);
+    }
+    .country-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .form-popup {
+      display: none;
+      position: fixed;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -20%);
+      background-color: #fff;
+      padding: 20px;
+      border: 2px solid #004080;
+      border-radius: 10px;
+      z-index: 999;
+      width: 90%;
+      max-width: 300px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    }
+    .form-popup input {
+      width: 100%;
+      margin: 5px 0;
+      padding: 8px;
+    }
+    .form-popup button {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .get-price-button {
+  position: fixed;
+  bottom: 135px; /* WhatsApp butonunun hemen üstü */
+  right: 20px;
+  background-color: #ffcc00;
+  color: #1c345a;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.get-price-button:hover {
+  background-color: #ffd633;
+  transform: scale(1.05);
+}
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-family: sans-serif;
+      z-index: 1000;
+    }
+    footer {
+      background-color: #1c345a;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+    .hero-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-flex img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hero-text {
+      flex: 1;
+      min-width: 280px;
+      font-size: 18px;
+    }
+  .popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+.popup-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.popup-content button {
+  margin-top: 10px;
+  background: #37363d;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.popup-content button:hover {
+  background: #1c345a;
+}
+.form-container {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+button {
+  background: #25d366;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+button:hover {
+  background: #1ebd5d;
+}
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, sans-serif; background-color: #fff; color: #333; }
+    header { background: url('banner.jpg') center/cover no-repeat; height: 500px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 20px; color: white; background-color: var(--primary) ; }
+    header h1 { font-size: 36px; margin: 0; background-color: rgba(28, 52, 90, 0.7); padding: 20px; border-radius: 10px; }
+    nav { position: sticky; top: 0; z-index: 100; background-color: var(--primary); display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; padding: 15px 0; }
+    nav a { color: #fff; font-weight: 600; text-decoration: none; font-size: 16px; transition: color 0.3s, transform 0.3s; }
+    nav a:hover { color: var(--secondary); transform: scale(1.1); }
+    section {
+  padding: 30px 15px;
+  max-width: 1100px;
+  margin: auto;
+}
+    
+[data-lang] {
+  display: none;
+}
+
+[data-lang].active {
+  display: block;
+}
+@media (max-width: 768px) {
+      header { height: 300px; }
+      header h1 { font-size: 24px; padding: 10px; }
+      nav { gap: 8px; justify-content: center; }
+      nav a { font-size: 13px; padding: 8px 12px; }
+      .social-icons a { width: 30px; height: 30px; }
+  }
+
+  header h1 {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  nav {
+    background-color: #1c345a;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+
+  section {
+    padding: 30px 15px;
+  }
+
+  .hero-flex {
+    flex-direction: column;
+  }
+
+  .popup-content, .form-container {
+    width: 95%;
+  }
+
+  .country img {
+    max-width: 100%;
+  }
+
+  .top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: white;
+  flex-wrap: wrap;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  background-color: #1c345a;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-icons img {
+  width: 20px;
+  height: 20px;
+}
+
+.lang-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.lang-buttons button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1c345a;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lang-buttons button.active {
+  background-color: #ffcc00;
+  color: black;
+}
+
+  .whatsapp-button {
+    bottom: 80px;
+    right: 15px;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+}
+    .language-switcher button {
+  background-color: transparent;
+  border: none;
+  color: #1c345a;
+  font-size: 16px;
+  cursor: pointer;
+}
+    .top-bar {
+  background: transparent !important;
+  padding: 0;
+  margin: 0;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+body > div:first-child {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+ .top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.social-icons,
+.lang-switch {
+  display: flex;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  background-color: #1c345a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+.social-icons a img {
+  width: 16px;
+  height: 16px;
+  filter: invert(1);
+}
+
+.social-icons a:hover {
+  background-color: #ffcc00;
+  transform: scale(1.2);
+}
+
+.lang-switch button {
+  background-color: var(--primary);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.lang-switch button.active {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+    @media (max-width: 768px) {
+  #anasayfa-tanitim {
+    flex-direction: column;
+  }
+
+  #anasayfa-tanitim div {
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+  </style>
+</head>
+<body>
+ <div class="top-bar">
+  <div class="social-icons">
+    <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="E-Posta">
+    </a>
+    <a href="https://instagram.com/mfteuropa" title="Instagram">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+    </a>
+    <a href="https://facebook.com/mfteuropa" title="Facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook">
+    </a>
+    <a href="https://wa.me/905312989741" title="WhatsApp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+  </div>
+
+  <div class="lang-buttons">
+    <button onclick="switchLang('tr')" id="btn-tr" class="active">TR</button>
+    <button onclick="switchLang('en')" id="btn-en">EN</button>
+  </div>
+</div>
+<header>
+  <h1 data-lang="tr" class="active">MFT Europa Lojistik</h1>
+<h1 data-lang="en">MFT Europa Logistics</h1>
+</header>
+<nav>
+  <a href="#anasayfa" data-lang="tr" class="active">Anasayfa</a>
+  <a href="#anasayfa" data-lang="en">Home</a>
+
+  <a href="#hakkimizda" data-lang="tr" class="active">Hakkımızda</a>
+  <a href="#hakkimizda" data-lang="en">About Us</a>
+
+  <a href="#hizmetler" data-lang="tr" class="active">Hizmetler</a>
+  <a href="#hizmetler" data-lang="en">Services</a>
+
+  <a href="#ulkeler" data-lang="tr" class="active">Ülkeler</a>
+  <a href="#ulkeler" data-lang="en">Countries</a>
+
+  <a href="#iletisim" data-lang="tr" class="active">İletişim</a>
+  <a href="#iletisim" data-lang="en">Contact</a>
+
+  <button class="login-button" onclick="openLogin()" style="display:none;">Müşteri Girişi</button>
+  <button class="register-button" onclick="openRegister()" style="display:none;">Kayıt Ol</button>
+</nav>
+  <section id="anasayfa">
+    <h2 data-lang="tr" class="active">Anasayfa</h2>
+    <h2 data-lang="en">Homepage</h2>
+<section id="anasayfa-tanitim" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; padding: 40px 20px;">
+  <div style="flex: 1; max-width: 500px; padding: 20px;">
+    <img src="slider2.png.png" alt="Lojistik Yönetimi" style="width: 100%; height: auto; border-radius: 12px;">
+  </div>
+
+  <div style="flex: 1; max-width: 600px; padding: 20px;">
+    <p data-lang="tr" class="active" style="font-size: 18px; line-height: 1.6; color: #333;">
+      <strong>MFT Europa</strong>, Türkiye'den Avrupa'nın birçok ülkesine yönelik uluslararası lojistik hizmetleri sunan profesyonel bir taşımacılık firmasıdır.<br>
+      Başta <strong>tekstil</strong>, <strong>mobilya</strong>, <strong>hırdavat</strong> ve benzeri sektör ürünleri olmak üzere, geniş ürün yelpazesinde uzmanlaşmış bulunmaktayız.<br><br>
+      Alanında deneyimli kadromuz ve Avrupa genelinde kurduğumuz güçlü lojistik ağımız sayesinde, müşterilerimize <strong>kapıdan kapıya teslimat</strong> imkânı sunuyoruz.<br>
+      Her gönderiyi; zamanında, güvenli ve ekonomik koşullarda ulaştırmak temel önceliğimizdir.
+    </p>
+
+    <ul data-lang="tr" class="active" style="font-size: 16px; color: #333; line-height: 1.6; padding-left: 20px;">
+      <li>✔️ Avrupa standartlarına uygun taşıma çözümleri</li>
+      <li>✔️ Hızlı, güvenli ve takip edilebilir teslimat süreçleri</li>
+      <li>✔️ Uygun fiyat garantisi ve müşteri memnuniyeti odaklı yaklaşım</li>
+    </ul>
+
+    <p data-lang="en" style="font-size: 18px; line-height: 1.6; color: #333;">
+      <strong>MFT Europa</strong> is a professional logistics company offering international transportation services from Turkey to various European countries.<br>
+      We specialize in transporting a wide range of products, particularly in the <strong>textile</strong>, <strong>furniture</strong>, and <strong>hardware</strong> sectors.<br><br>
+      Thanks to our experienced team and robust logistics network across Europe, we offer reliable <strong>door-to-door delivery</strong> services to our customers.<br>
+      Ensuring each shipment arrives on time, safely, and at a competitive cost is our top priority.
+    </p>
+
+    <ul data-lang="en" style="font-size: 16px; color: #333; line-height: 1.6; padding-left: 20px;">
+      <li>✔️ Transport solutions aligned with European standards</li>
+      <li>✔️ Fast, secure, and traceable delivery processes</li>
+      <li>✔️ Best price guarantee with customer-centric service</li>
+    </ul>
+  </div>
+</section>
+<section id="hakkimizda">
+  <h2 data-lang="tr" class="active">Hakkımızda</h2>
+  <h2 data-lang="en">About Us</h2>
+<p data-lang="tr" class="active" style="font-size: 18px; line-height: 1.6; color: #333;">
+  <strong>MFT Europa</strong>, uluslararası taşımacılık alanında uzmanlaşmış, Avrupa lojistik pazarında <strong>10 yılı aşkın süredir faaliyet gösteren</strong> kurumsal bir lojistik firmasıdır.<br>
+  Kurulduğu günden bu yana Türkiye ile Avrupa ülkeleri arasında güvenli ve sistematik bir taşıma köprüsü kurmayı hedeflemiş olan firmamız, <strong>tekstil</strong>, <strong>mobilya</strong>, <strong>hırdavat</strong> gibi birçok sektöre yönelik profesyonel lojistik çözümler sunmaktadır.<br><br>
+  Lojistik süreçlerimizi <strong>şeffaflık, zamanında teslimat</strong> ve <strong>müşteri memnuniyeti</strong> ilkeleri üzerine inşa ediyor; her bir gönderiyi titizlikle ele alıyoruz.<br>
+  Geniş araç filomuz, deneyimli ekibimiz ve Avrupa'nın pek çok ülkesinde kurduğumuz teslimat ağıyla, iş ortaklarımıza değer katmayı sürdürüyoruz.<br><br>
+  <strong>MFT Europa</strong> olarak sadece bir taşıma firması değil, aynı zamanda güvenilir bir lojistik çözüm ortağı olmayı hedefliyoruz.<br>
+  Her adımda kalite, her teslimatta itibar.
+</p>
+
+<p data-lang="en" style="font-size: 18px; line-height: 1.6; color: #333;">
+  <strong>MFT Europa</strong> is a corporate logistics company with over <strong>10 years of experience</strong> in international transportation, primarily operating within the European market.<br>
+  Since its inception, we have aimed to establish a secure and structured logistics bridge between Turkey and key European destinations, offering professional transportation solutions for the <strong>textile</strong>, <strong>furniture</strong>, and <strong>hardware</strong> sectors.<br><br>
+  Our logistics operations are built on the pillars of <strong>transparency</strong>, <strong>on-time delivery</strong>, and <strong>client satisfaction</strong>. Each shipment is managed with precision and care.<br>
+  Thanks to our extensive fleet, experienced team, and wide-reaching delivery network across Europe, we continue to add measurable value to our business partners.<br><br>
+  At <strong>MFT Europa</strong>, we are more than a transportation company — we are your trusted logistics solution partner.<br>
+  Quality in every step, reputation in every delivery.
+</p>
+  </section>
+    
+  <section id="hizmetler">
+    <h2 data-lang="tr" class="active">Hizmetlerimiz</h2>
+    <h2 data-lang="en">Our Services</h2>
+    <ul data-lang="tr" class="active">
+      <li>Parsiyel Taşımacılık</li>
+      <li>Komple Taşımacılık</li>
+      <li>Mobilya, tekstil ve hırdavat nakliyesi</li>
+      <li>Kapıdan kapıya teslimat</li>
+    </ul>
+    <ul data-lang="en">
+      <li>Partial Load Transportation</li>
+      <li>Full Load Transportation</li>
+      <li>Transport of furniture, textiles, and hardware</li>
+      <li>Door-to-door delivery</li>
+    </ul>
+  </section>
+  <section id="nedenbiz">
+    <h2 data-lang="tr" class="active">Neden MFT Europa?</h2>
+    <h2 data-lang="en">Why MFT Europa?</h2>
+    <ul data-lang="tr" class="active">
+      <li>10+ yıl deneyim</li>
+      <li>Avrupa çapında teslimat ağı</li>
+      <li>Kapıdan kapıya hizmet</li>
+      <li>Uygun fiyat garantisi</li>
+    </ul>
+    <ul data-lang="en">
+      <li>Over 10 years of experience</li>
+      <li>Europe-wide delivery network</li>
+      <li>Door-to-door service</li>
+      <li>Competitive pricing guarantee</li>
+    </ul>
+  </section>
+<section id="ulkeler">
+ <h2 data-lang="tr" class="active">Hizmet Verdiğimiz Ülkeler </h2>
+<p data-lang="tr" class="active" style="text-align:center; font-size: 18px; font-weight: 500; color:#444;">
+  Ülkenizi seçin, <strong>fiyat sihrini</strong> birkaç tıkta keşfedin! 🚚✨
+</p>
+
+<h2 data-lang="en">Countries We Serve</h2>
+<p data-lang="en" style="text-align:center; font-size: 18px; font-weight: 500; color:#444;">
+  Select your country and let the <strong>price magic</strong> begin in just a few clicks! 🚚✨
+</p>
+  <div class="grid">
+    <div class="country"><img src="almanya_white_bg.png"><div class="country-name">Almanya</div></div>
+    <div class="country"><img src="hollanda_white_bg.png"><div class="country-name">Hollanda</div></div>
+    <div class="country"><img src="belcika_white_bg.png"><div class="country-name">Belçika</div></div>
+    <div class="country"><img src="fransa_white_bg.png"><div class="country-name">Fransa</div></div>
+    <div class="country"><img src="ispanya_white_bg.png"><div class="country-name">İspanya</div></div>
+    <div class="country"><img src="italya_white_bg.png"><div class="country-name">İtalya</div></div>
+    <div class="country"><img src="luksemburg_white_bg.png"><div class="country-name">Lüksemburg</div></div>
+    <div class="country"><img src="danimarka_white_bg.png"><div class="country-name">Danimarka</div></div>
+    <div class="country"><img src="avusturya_white_bg.png"><div class="country-name">Avusturya</div></div>
+  </div>
+</section>
+<section id="iletisim">
+  <h2 data-lang="tr" class="active">İletişim</h2>
+    <h2 data-lang="en">Contact</h2>
+  <p><strong>Telefonlar:</strong></p>
+  <p><a href="tel:+491733442684">+49 173 344 26 84</a></p>
+  <p><a href="tel:+905312989741">+90 531 298 97 41</a></p>
+  <p><a href="tel:+905449947544">+90 544 994 75 44</a></p>
+  <p><strong>WhatsApp:</strong></p>
+  <p><a href="https://wa.me/491733442684" target="_blank">WhatsApp: +49 173 344 26 84</a></p>
+  <p><a href="https://wa.me/905312989741" target="_blank">WhatsApp: +90 531 298 97 41</a></p>
+  <p><a href="https://wa.me/905449947544" target="_blank">WhatsApp: +90 544 994 75 44</a></p>
+  <p><strong>E-posta:</strong> <a href="mailto:mfteuropa.tr@gmail.com">mfteuropa.tr@gmail.com</a></p>
+  <p><strong>Adres:</strong> Mehmet Nesih Özmen, Ladin Sk. No:19, 34173 Güngören/İstanbul</p>
+</section>
+ <section aria-label="Sosyal Medya">
+  <h2 data-lang="tr" class="active">Sosyal Medyada Bizi Takip Edin</h2>
+  <h2 data-lang="en">Join Us on Social Media</h2>
+
+  <div class="social-icons">
+    <a href="mailto:mfteuropa.tr@gmail.com" title="E-Posta" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" width="32" height="32">
+    </a>
+    <a href="https://instagram.com/mfteuropa" title="Instagram" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="32" height="32">
+    </a>
+    <a href="https://facebook.com/mfteuropa" title="Facebook" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" width="32" height="32">
+    </a>
+  </div>
+</section>
+     <h3 data-lang="tr" class="active">Ofis Konumu</h3>
+<h3 data-lang="en">Office Location</h3>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.439616233314!2d28.88734781565913!3d41.00564877930009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa374f19859db%3A0x946c427221009b3c!2sMehmet%20Nesih%20%C3%96zmen%2C%20Ladin%20Sk.%20No%3A19%2C%2034173%20G%C3%BCng%C3%B6ren%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1713791111111"
+    width="100%"
+    height="300"
+    style="border:0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  <div style="margin-top: 10px; text-align: center;">
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Mehmet+Nesih+%C3%96zmen,+Ladin+Sk.+No%3A19,+34173+G%C3%BCng%C3%B6ren%2F%C4%B0stanbul" target="_blank" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #1c345a; color: white; border-radius: 8px; text-decoration: none; font-weight: bold;">
+      🗺️ Yol Tarifi Al
+    </a>
+  </div>
+<a href="#ulkeler" class="get-price-button">💰 Fiyat Al</a>
+<a class="whatsapp-button" href="https://wa.me/905312989741" target="_blank">💬 WhatsApp Destek</a>
+ <!--
+<div class="popup" id="loginPopup">
+  <div class="popup-content">
+    <h2>Müşteri Girişi</h2>
+    <input type="tel" placeholder="Telefon Numarası">
+    <input type="password" placeholder="Şifre">
+    <button>Giriş Yap</button>
+    <button onclick="closeLogin()">Kapat</button>
+  </div>
+</div>
+-->
+<div class="popup" id="registerPopup">
+  <div class="popup-content">
+    <h2>Kayıt Ol</h2>
+    <input type="text" placeholder="İsim Soyisim">
+    <input type="tel" placeholder="Telefon Numarası">
+    <input type="email" placeholder="E-Posta">
+    <input type="password" placeholder="Şifre">
+    <input type="password" placeholder="Şifre Tekrar">
+    <button onclick="alert('Kaydınız alındı!')">Kayıt Ol</button>
+    <button onclick="closeRegister()">Kapat</button>
+  </div>
+</div>
+ <script>
+function openLogin() {
+  document.getElementById("loginPopup").style.display = "flex";
+}
+function closeLogin() {
+  document.getElementById("loginPopup").style.display = "none";
+}
+
+function openRegister() {
+  document.getElementById("registerPopup").style.display = "flex";
+}
+function closeRegister() {
+  document.getElementById("registerPopup").style.display = "none";
+}
+   </script>
+<!-- Fiyat Hesaplama Popup -->
+  <div id="fiyatPopup" class="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; z-index:9999;">
+  <div class="popup-content" style="background:white; padding:20px; border-radius:10px; text-align:center; max-width:350px; width:90%;">
+    <h2 id="ulkeBaslik">Ülke</h2>
+    <input type="text" id="en" placeholder="Koli Eni (cm)">
+    <input type="text" id="boy" placeholder="Koli Boyu (cm)">
+    <input type="text" id="yukseklik" placeholder="Koli Yüksekliği (cm)">
+    <input type="text" id="agirlik" placeholder="Koli Ağırlığı (kg)">
+    <p id="fiyat">Fiyat: -</p>
+    <button onclick="hesaplaFiyat()">Fiyat Hesapla</button>
+    <button onclick="rezervasyonOlustur()">Rezervasyon Yap</button>
+    <button onclick="document.getElementById('fiyatPopup').style.display='none'">Kapat</button>
+  </div>
+</div>
+<script>
+let seciliUlke = '';
+const ulkeCarpanlari = {
+  "Almanya": 1.5,
+  "Hollanda": 1.3,
+  "Belçika": 1.4,
+  "Fransa": 1.5,
+  "İtalya": 1.6,
+  "İspanya": 1.7,
+  "Avusturya": 1.3,
+  "Lüksemburg": 1.2,
+  "Danimarka": 1.6
+};
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.country').forEach(el => {
+    el.addEventListener('click', () => {
+      const ulke = el.querySelector('.country-name').innerText;
+      document.getElementById('fiyatPopup').style.display = 'flex';
+      document.getElementById('ulkeBaslik').innerText = ulke;
+      seciliUlke = ulke;
+    });
+  });
+});
+
+function hesaplaFiyat() {
+  const en = parseFloat(document.getElementById("en").value) || 0;
+  const boy = parseFloat(document.getElementById("boy").value) || 0;
+  const yuk = parseFloat(document.getElementById("yukseklik").value) || 0;
+  const agirlik = parseFloat(document.getElementById("agirlik").value) || 0;
+  const secili = document.getElementById("ulkeBaslik").innerText.trim();
+  const fiyatEl = document.getElementById("fiyat");
+
+  const is = (a, b, c) => {
+    const girilen = [en, boy, yuk].sort((x, y) => x - y);
+    const sabit = [a, b, c].sort((x, y) => x - y);
+    return JSON.stringify(girilen) === JSON.stringify(sabit);
+  };
+
+  const kg = agirlik;
+  let fiyat = "-";
+  let mesaj = "";
+
+  if (["Almanya", "Hollanda", "Belçika"].includes(secili)) {
+    if (is(50, 80, 50)) {
+      if (kg >= 20 && kg <= 30) fiyat = "45€";
+      else if (kg > 30 && kg <= 45) fiyat = "55€";
+      else if (kg > 45 && kg <= 60) fiyat = "60€";
+    } else if (is(60, 90, 60)) {
+      if (kg > 30 && kg <= 45) fiyat = "60€";
+      else if (kg > 45 && kg <= 60) fiyat = "65€";
+    } else if (is(40, 60, 40)) {
+      if (kg >= 10 && kg <= 30) fiyat = "50€";
+      else if (kg > 30 && kg <= 45) fiyat = "60€";
+    }
+  }
+   else if (["Lüksemburg", "Danimarka", "Avusturya", "Fransa", "İspanya", "İtalya"].includes(secili)) {
+    if (is(50, 80, 50)) {
+      if (kg >= 1 && kg <= 10) fiyat = "50€";
+      else if (kg > 10 && kg <= 20) fiyat = "60€";
+      else if (kg > 20 && kg <= 30) fiyat = "70€";
+    }
+  }
+
+  if (fiyat !== "-") {
+    mesaj = `Fiyat: ${fiyat}`;
+    if (secili === "Almanya") {
+      mesaj += `<br><span style="color:#ff9900; font-size:14px;">Koli ağırlıkları, adres ve uzaklığa göre fiyat değişmektedir.</span>`;
+    }
+    fiyatEl.innerHTML = mesaj;
+  } else {
+    fiyatEl.innerHTML = `
+      <span style="color: red; font-weight: bold;">Lütfen bizimle iletişime geçin</span><br>
+      <a href="https://wa.me/905312989741" target="_blank" style="display:inline-block;margin-top:10px;padding:8px 16px;background-color:#25d366;color:white;border-radius:6px;text-decoration:none;">💬 WhatsApp Destek</a>
+    `;
+  }
+}
+
+function rezervasyonOlustur() {
+  const en = document.getElementById("en").value;
+  const boy = document.getElementById("boy").value;
+  const yuk = document.getElementById("yukseklik").value;
+  const agirlik = document.getElementById("agirlik").value;
+  const ulke = document.getElementById("ulkeBaslik").innerText;
+  const fiyatMetni = document.getElementById("fiyat").innerText || "-";
+  const kod = `RZ-${Math.floor(10000 + Math.random() * 90000)}`;
+
+  const mesaj = `📦 Rezervasyon\nÜlke: ${ulke}\nEn: ${en} cm\nBoy: ${boy} cm\nYükseklik: ${yuk} cm\nAğırlık: ${agirlik} kg\n${fiyatMetni}\nKod: ${kod}`;
+  
+  const url = `https://wa.me/905312989741?text=${encodeURIComponent(mesaj)}`;
+  window.open(url, "_blank");
+}
+</script>
+  
+  <footer>
+  <p data-lang="tr" class="active" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. Tüm hakları saklıdır.</p>
+<p data-lang="en" style="margin: 0; padding: 20px 0; color: white;">© 2025 MFT Europa. All rights reserved.</p>
+</footer>
+
+ <script>
+  function switchLang(lang) {
+    // Tüm öğelerden active class'ı kaldır
+    document.querySelectorAll('[data-lang]').forEach(el => {
+      el.classList.remove('active');
+    });
+
+    // Seçilen dile ait olanlara active class'ı ekle
+    document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+      el.classList.add('active');
+    });
+
+    // Butonları güncelle
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  }
+
+  // Sayfa yüklendiğinde varsayılan olarak Türkçe göster
+  document.addEventListener('DOMContentLoaded', () => {
+    switchLang('tr');
+  });
+</script>
+
+</script>
+</body>
+</html>
