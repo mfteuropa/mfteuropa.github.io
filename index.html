@@ -139,151 +139,76 @@ nav a:hover {
       transform: scale(1.05);
     }
 
-    section {
-      padding: 50px 20px;
-      max-width: 1100px;
-      margin: auto;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #1c345a;
-      position: relative;
-    }
-    h2::after {
-      content: '';
-      width: 50px;
-      height: 4px;
-      background: #ffcc00;
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    .country {
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
-    .country:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-    .country img {
-      width: 100%;
-      max-width: 180px;
-      background-color: white;
-      border-radius: 8px;
-      padding: 10px;
-      transition: transform 0.3s ease;
-    }
-    .country img:hover {
-      transform: scale(1.05);
-    }
-    .country-name {
-      font-size: 18px;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-    .form-popup {
-      display: none;
-      position: fixed;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -20%);
-      background-color: #fff;
-      padding: 20px;
-      border: 2px solid #004080;
-      border-radius: 10px;
-      z-index: 999;
-      width: 90%;
-      max-width: 300px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.3);
-    }
-    .form-popup input {
-      width: 100%;
-      margin: 5px 0;
-      padding: 8px;
-    }
-    .form-popup button {
-      margin-top: 10px;
-      padding: 10px;
-      background-color: #004080;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
-    .get-price-button {
-  position: fixed;
-  bottom: 135px; /* WhatsApp butonunun hemen üstü */
-  right: 20px;
-  background-color: #ffcc00;
-  color: #1c345a;
-  padding: 12px 18px;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
-  transition: transform 0.3s, background-color 0.3s;
+   section {
+  padding: 50px 20px;
+  max-width: 1100px;
+  margin: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.get-price-button:hover {
-  background-color: #ffd633;
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  width: 50px;
+  height: 4px;
+  background: var(--secondary);
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* Grid sistem */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.country {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.country:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.country img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+
+.country img:hover {
   transform: scale(1.05);
 }
-    .whatsapp-button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 16px;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      font-family: sans-serif;
-      z-index: 1000;
-    }
-    footer {
-      background-color: #1c345a;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 50px;
-    }
-    .hero-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      align-items: center;
-      justify-content: center;
-    }
-    .hero-flex img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .hero-text {
-      flex: 1;
-      min-width: 280px;
-      font-size: 18px;
-    }
-  .popup {
+
+.country-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Form popup */
+.form-popup, .popup {
   display: none;
   position: fixed;
   top: 0; left: 0;
@@ -293,29 +218,98 @@ nav a:hover {
   align-items: center;
   z-index: 9999;
 }
-.popup-content {
+
+.popup-content, .form-popup {
   background: white;
   padding: 30px;
   border-radius: 12px;
-  width: 90%;
   max-width: 400px;
+  width: 90%;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
-.popup-content input {
+
+.popup-content input,
+.form-popup input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
-.popup-content button {
+
+.popup-content button,
+.form-popup button {
   margin-top: 10px;
+  padding: 10px 20px;
   background: #37363d;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+}
+
+/* Fiyat & WhatsApp butonları */
+.get-price-button,
+.whatsapp-button {
+  position: fixed;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.get-price-button {
+  bottom: 135px;
+  background: var(--secondary);
+  color: var(--primary);
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.get-price-button:hover {
+  background: #ffd633;
+  transform: scale(1.05);
+}
+
+.whatsapp-button {
+  bottom: 20px;
+  background: #25d366;
+  color: white;
+  font-family: sans-serif;
+}
+
+/* Footer */
+footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+/* Hero flex */
+.hero-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-flex img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+  font-size: 18px;
 }
 .popup-content button:hover {
   background: #1c345a;
