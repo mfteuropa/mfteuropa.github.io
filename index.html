@@ -436,12 +436,25 @@ button:hover {
     padding: 10px 14px;
   }
 }
-    .language-switcher button {
+  .language-switcher button {
   background-color: transparent;
   border: none;
-  color: #1c345a;
+  color: var(--primary);
   font-size: 16px;
   cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.language-switcher button:hover {
+  background-color: var(--secondary);
+  color: black;
+}
+
+.language-switcher button.active {
+  background-color: var(--secondary);
+  color: black;
 }
     .top-bar {
   background: transparent !important;
