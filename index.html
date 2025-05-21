@@ -331,6 +331,13 @@ nav a:hover {
 .popup-content button:hover {
   background: #1c345a;
 }
+    [data-lang] {
+  display: none;
+}
+
+[data-lang].active {
+  display: block;
+}
 .form-container {
   background: white;
   padding: 30px;
@@ -373,13 +380,6 @@ button:hover {
   margin: auto;
 }
     
-[data-lang] {
-  display: none;
-}
-
-[data-lang].active {
-  display: block;
-}
 @media (max-width: 768px) {
       header { height: 300px; }
       header h1 { font-size: 24px; padding: 10px; }
