@@ -888,14 +888,37 @@ function hesaplaFiyat() {
   let mesaj = "";
 
   if (["Almanya", "Hollanda", "Belçika"].includes(secili)) {
-    if (is(50, 80, 50)) {
-      if (kg >= 20 && kg <= 30) fiyat = "45€";
-      else if (kg > 30 && kg <= 45) fiyat = "55€";
-      else if (kg > 45 && kg <= 60) fiyat = "60€";
-    } else if (is(60, 90, 60)) {
-      if (kg > 30 && kg <= 45) fiyat = "60€";
-      else if (kg > 45 && kg <= 60) fiyat = "65€";
-    } else if (is(40, 60, 40)) {
+  if (
+    is(50, 80, 50) ||
+    is(50, 80, 40) ||
+    is(40, 80, 40) ||
+    is(40, 80, 30) ||
+    is(30, 80, 30) 
+  ) {
+    if (kg >= 1 && kg <= 9) fiyat = "40€";
+    else if (kg >= 10 && kg <= 19) fiyat = "45€";
+    else if (kg >= 20 && kg <= 29) fiyat = "50€";
+    else if (kg >= 30 && kg <= 40) fiyat = "55€";
+    else if (kg >= 41 && kg <= 50) fiyat = "65€";
+    } else if (
+    is(60, 90, 60) ||
+    is(60, 80, 60) ||
+    is(60, 70, 60) ||
+    is(60, 60, 60) ||
+    is(60, 50, 60) 
+  ) {
+      if (kg >= 1 && kg <= 9) fiyat = "45€";
+      else if (kg >= 10 && kg <= 19) fiyat = "55€";
+      else if (kg >= 20 && kg <= 29) fiyat = "60€";
+      else if (kg >= 30 && kg <= 40) fiyat = "65€";
+      else if (kg >= 41 && kg <= 50) fiyat = "70€";
+    } else if (
+    is(40, 60, 40) ||
+    is(40, 60, 30) ||
+    is(30, 60, 30) ||
+    is(30, 60, 20) ||
+    is(20, 60, 20) 
+    ) {
       if (kg >= 10 && kg <= 30) fiyat = "50€";
       else if (kg > 30 && kg <= 45) fiyat = "60€";
     }
