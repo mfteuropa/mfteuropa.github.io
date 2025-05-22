@@ -912,6 +912,17 @@ function hesaplaFiyat() {
       else if (kg >= 20 && kg <= 29) fiyat = "60€";
       else if (kg >= 30 && kg <= 40) fiyat = "65€";
       else if (kg >= 41 && kg <= 50) fiyat = "70€";
+     } else if (
+    is(70, 40, 40) ||
+    is(70, 30, 30) ||
+    is(70, 20, 30) ||
+    is(70, 50, 50) 
+  ) {
+      if (kg >= 1 && kg <= 9) fiyat = "40€";
+      else if (kg >= 10 && kg <= 19) fiyat = "45€";
+      else if (kg >= 20 && kg <= 29) fiyat = "50€";
+      else if (kg >= 30 && kg <= 40) fiyat = "55€";
+      else if (kg >= 41 && kg <= 50) fiyat = "60€";
     } else if (
     is(40, 60, 40) ||
     is(40, 60, 30) ||
