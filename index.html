@@ -935,7 +935,23 @@ function hesaplaFiyat() {
     }
   }
    else if (["Lüksemburg", "Danimarka", "Avusturya", "Fransa", "İspanya", "İtalya"].includes(secili)) {
-    if (is(50, 80, 50)) {
+    if (
+    is(50, 80, 50) ||
+    is(40, 80, 40) ||
+    is(50, 80, 40) ||
+    is(40, 80, 30) ||
+    is(30, 80, 30)
+       ) {
+      if (kg >= 1 && kg <= 10) fiyat = "50€";
+      else if (kg > 10 && kg <= 20) fiyat = "60€";
+      else if (kg > 20 && kg <= 30) fiyat = "70€";
+    } else if (
+    is(40, 60, 40) ||
+    is(40, 60, 30) ||
+    is(30, 60, 30) ||
+    is(30, 60, 20) ||
+    is(20, 60, 20) 
+    ) {
       if (kg >= 1 && kg <= 10) fiyat = "50€";
       else if (kg > 10 && kg <= 20) fiyat = "60€";
       else if (kg > 20 && kg <= 30) fiyat = "70€";
