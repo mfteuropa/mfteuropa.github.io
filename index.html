@@ -693,14 +693,18 @@ main::after {
   right: 0;
   background-position: right top;
 }
-    main {
-  position: relative; /* before/after ona bağlı hizalansın */
-  z-index: 1;          /* içerik, filigran görselinin üstünde kalsın */
+
+main {
+  position: relative;
+  z-index: 1;
 }
-    .desktop-logo {
+
+/* Logo varsayılan gizli */
+.desktop-logo {
   display: none;
 }
 
+/* Masaüstü için görünür ve sabit konumda */
 @media (min-width: 1024px) {
   .desktop-logo {
     display: block;
@@ -716,7 +720,10 @@ main::after {
     width: auto;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
   }
-  @media (max-width: 768px) {
+}
+
+/* Mobilde tamamen gizli */
+@media (max-width: 768px) {
   .desktop-logo {
     display: none;
   }
