@@ -674,13 +674,13 @@ main::before,
 main::after {
   content: "";
   position: absolute;
-  top: 750px; /* 👈 Banner + üst içerik yüksekliğine göre ayarla */
+  top: 750px; /* banner'dan sonra başlasın */
+  bottom: 0; /* 👈 Taban sınırı: Sayfanın en altına kadar uzanır */
   width: 300px;
-  height: 100%;
   background-image: url('fligran.png');
   background-repeat: repeat-y;
   background-size: contain;
-  opacity: 0.02; /* 👁 Göz yormayan opaklık */
+  opacity: 0.02;
   pointer-events: none;
   z-index: 0;
 }
@@ -693,6 +693,10 @@ main::before {
 main::after {
   right: 0;
   background-position: right top;
+}
+    main {
+  position: relative; /* before/after ona bağlı hizalansın */
+  z-index: 1;          /* içerik, filigran görselinin üstünde kalsın */
 }
   </style>
 </head>
