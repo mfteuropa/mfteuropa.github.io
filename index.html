@@ -670,17 +670,18 @@ body > div:first-child {
 .contact-list a:hover {
   color: #ffcc00;
 }
- main::before,
+main::before,
 main::after {
   content: "";
   position: fixed;
-  top: 150px; /* banner yüksekliğinden sonra başlar */
+  top: 150px; /* banner yüksekliği kadar */
   width: 300px;
   height: calc(100% - 150px);
   background-image: url('fligran.png');
   background-repeat: repeat-y;
   background-size: contain;
-  opacity: 0.03;
+  background-color: rgba(255,255,255,0.6); /* beyaz saydam arka plan maskesi */
+  background-blend-mode: multiply; /* kontrastı arttırır */
   pointer-events: none;
   z-index: 0;
 }
