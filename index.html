@@ -674,25 +674,25 @@ main::before,
 main::after {
   content: "";
   position: absolute;
-  top: 150px;
+  top: 750px; /* 👈 Banner + üst içerik yüksekliğine göre ayarla */
   width: 300px;
-  height: calc(100% - 150px);
+  height: 100%;
   background-image: url('fligran.png');
   background-repeat: repeat-y;
   background-size: contain;
-  opacity: 0.03; /* 👈 daha düşük görünürlük */
+  opacity: 0.02; /* 👁 Göz yormayan opaklık */
   pointer-events: none;
   z-index: 0;
 }
 
 main::before {
   left: 0;
-  background-position: left center;
+  background-position: left top;
 }
 
 main::after {
   right: 0;
-  background-position: right center;
+  background-position: right top;
 }
   </style>
 </head>
