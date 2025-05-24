@@ -650,6 +650,14 @@ body > div:first-child {
 .contact-list a:hover {
   color: #ffcc00;
 }
+    .contact-list div {
+  margin-bottom: 8px;
+}
+
+.contact-list .icon-phone {
+  margin-right: 8px;
+  font-size: 18px;
+}
   </style>
 </head>
 <body>
@@ -813,11 +821,11 @@ body > div:first-child {
   <h2 data-lang="tr" class="active">İletişim</h2>
   <h2 data-lang="en">Contact</h2>
 
-  <ul class="contact-list">
-  <li><a href="#" onclick="openOptions('Almanya', '+491733442684')">İletişim Almanya</a></li>
-  <li><a href="#" onclick="openOptions('Destek', '+905312989741')">İletişim Destek</a></li>
-  <li><a href="#" onclick="openOptions('Depo', '+905449947544')">İletişim Depo</a></li>
-</ul>
+  <div class="contact-list">
+  <div><span class="icon-phone">📞</span><a onclick="openOptions('Almanya', '+491733442684')">İletişim Almanya</a></div>
+  <div><span class="icon-phone">📞</span><a onclick="openOptions('Destek', '+905312989741')">İletişim Destek</a></div>
+  <div><span class="icon-phone">📞</span><a onclick="openOptions('Depo', '+905449947544')">İletişim Depo</a></div>
+</div>
 
 <div id="popup" class="popup" style="display:none;">
   <div class="popup-content">
