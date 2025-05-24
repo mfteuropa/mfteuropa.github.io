@@ -638,7 +638,27 @@ body > div:first-child {
   background-color: #ffcc00;
   color: black;
 }
-    .contact-list a {
+ .contact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.contact-list div {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* SVG ikonlar için */
+.contact-list .icon-phone {
+  width: 20px;
+  height: 20px;
+  fill: #1c345a;
+}
+
+/* Link (anchor) stilleri */
+.contact-list a {
   all: unset;
   cursor: pointer;
   font-weight: bold;
@@ -649,14 +669,6 @@ body > div:first-child {
 
 .contact-list a:hover {
   color: #ffcc00;
-}
-    .contact-list div {
-  margin-bottom: 8px;
-}
-
-.contact-list .icon-phone {
-  margin-right: 8px;
-  font-size: 18px;
 }
   </style>
 </head>
@@ -822,19 +834,35 @@ body > div:first-child {
   <h2 data-lang="en">Contact</h2>
 
   <div class="contact-list">
-  <div><span class="icon-phone">📞</span><a onclick="openOptions('Almanya', '+491733442684')">İletişim Almanya</a></div>
-  <div><span class="icon-phone">📞</span><a onclick="openOptions('Destek', '+905312989741')">İletişim Destek</a></div>
-  <div><span class="icon-phone">📞</span><a onclick="openOptions('Depo', '+905449947544')">İletişim Depo</a></div>
-</div>
+    <div>
+      <!-- Telefon ikonu -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.48 2.53.73 3.88.73.55 0 1 .45 1 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.35.25 2.67.73 3.88.14.36.07.77-.21 1.11l-2.2 2.2z"/></svg>
+      <a onclick="openOptions('Almanya', '+491733442684')">İletişim Almanya</a>
+    </div>
 
-<div id="popup" class="popup" style="display:none;">
-  <div class="popup-content">
-    <p id="popupTitle">Ne yapmak istersiniz?</p>
-    <button id="callBtn">📞 Ara</button>
-    <button id="whatsappBtn">💬 WhatsApp</button>
-    <button onclick="closePopup()">Kapat</button>
+    <div>
+      <!-- Telefon ikonu -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.48 2.53.73 3.88.73.55 0 1 .45 1 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.35.25 2.67.73 3.88.14.36.07.77-.21 1.11l-2.2 2.2z"/></svg>
+      <a onclick="openOptions('Destek', '+905312989741')">İletişim Destek</a>
+    </div>
+
+    <div>
+      <!-- Telefon ikonu -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon-phone" viewBox="0 0 24 24"><path d="M6.62 10.79a15.464 15.464 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.48 2.53.73 3.88.73.55 0 1 .45 1 1v3.5a1 1 0 01-1 1C10.07 22 2 13.93 2 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.35.25 2.67.73 3.88.14.36.07.77-.21 1.11l-2.2 2.2z"/></svg>
+      <a onclick="openOptions('Depo', '+905449947544')">İletişim Depo</a>
+    </div>
   </div>
-</div>
+
+  <!-- Gizli popup -->
+  <div id="popup" class="popup" style="display:none;">
+    <div class="popup-content">
+      <p id="popupTitle">Ne yapmak istersiniz?</p>
+      <button id="callBtn">📞 Ara</button>
+      <button id="whatsappBtn">💬 WhatsApp</button>
+      <button onclick="closePopup()">Kapat</button>
+    </div>
+  </div>
+</section>
   <p><strong>E-posta:</strong> <a href="mailto:mfteuropa.tr@gmail.com">mfteuropa.tr@gmail.com</a></p>
   <p><strong>Adres:</strong> Mehmet Nesih Özmen, Ladin Sk. No:19, 34173 Güngören/İstanbul</p>
 </section>
