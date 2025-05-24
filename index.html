@@ -673,15 +673,14 @@ body > div:first-child {
 main::before,
 main::after {
   content: "";
-  position: fixed;
-  top: 150px; /* banner yüksekliği kadar */
+  position: absolute;
+  top: 150px;
   width: 300px;
   height: calc(100% - 150px);
   background-image: url('fligran.png');
   background-repeat: repeat-y;
   background-size: contain;
-  background-color: rgba(255,255,255,0.6); /* beyaz saydam arka plan maskesi */
-  background-blend-mode: multiply; /* kontrastı arttırır */
+  opacity: 0.03; /* 👈 daha düşük görünürlük */
   pointer-events: none;
   z-index: 0;
 }
