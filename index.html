@@ -698,9 +698,30 @@ main::after {
   position: relative; /* before/after ona bağlı hizalansın */
   z-index: 1;          /* içerik, filigran görselinin üstünde kalsın */
 }
+    .desktop-logo {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktop-logo {
+    display: block;
+    position: absolute;
+    top: 105px;
+    left: 30px;
+    z-index: 1000;
+  }
+
+  .desktop-logo img {
+    height: 60px;
+    width: auto;
+  }
+}
   </style>
 </head>
 <body>
+  <div class="desktop-logo">
+  <img src="mft-logo.png" alt="MFT Europa Logo" />
+</div>
   <main>
  <div class="top-bar">
   <div class="social-icons">
