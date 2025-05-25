@@ -699,32 +699,32 @@ main {
   z-index: 1;
 }
 
+./* LOGO GİZLE MOBİLDE */
 .desktop-logo {
   display: none;
 }
 
+/* SADECE MASAÜSTÜ GÖRÜNÜR */
 @media (min-width: 1024px) {
-  #site-header {
-  display: flex;
-  align-items: center;
-  gap: 16px; /* logo ve yazı arası boşluk */
-  padding: 12px 24px;
-}
-
   .desktop-logo {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 20px;
-    z-index: 10;
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
   }
 
   .desktop-logo img {
-    height: 60px;
+    height: 40px;
     width: auto;
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
   }
 }
+
   </style>
 </head>
 <body>
@@ -758,6 +758,9 @@ main {
   <h1 data-lang="en">MFT Europa Logistics</h1>
 </header>
 <nav>
+  <div class="desktop-logo">
+    <img src="mft-logo.png" alt="MFT Europa Logo" />
+  </div>
   <a href="#anasayfa" data-lang="tr" class="active">Anasayfa</a>
   <a href="#anasayfa" data-lang="en">Home</a>
 
