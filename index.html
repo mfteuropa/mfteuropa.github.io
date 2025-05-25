@@ -819,17 +819,21 @@ body.dark h6 {
 body.dark p {
   color: #cccccc !important;
 }
-   /* DARK MODE: Ülke isimleri buton/kart içindeyse zorla beyaz göster */
-body.dark .card button,
+  /* DARK MODE: Kart içi ülke isimleri tamamen görünür ve net */
+body.dark .card p,
 body.dark .card button p,
-body.dark button p,
+body.dark .card span,
+body.dark .card button span,
 body.dark .country-card p,
-body.dark .country-card button,
 body.dark .country-card span,
-body.dark .country-name {
-  color: #f0f0f0 !important;
+body.dark .country-card button span,
+body.dark .country-name,
+body.dark button p {
+  color: #ffffff !important;
   opacity: 1 !important;
+  font-weight: 500 !important;
 }
+
     /* Dark Mode: WhatsApp ve Fiyat Al butonları uyumlu hale getir */
 body.dark .whatsapp-btn,
 body.dark .whatsapp-btn:active,
