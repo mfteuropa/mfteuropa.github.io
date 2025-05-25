@@ -838,19 +838,22 @@ body.dark .country-name {
   font-weight: 600 !important;
   text-shadow: none !important;
 }
-  /* DARK MODE: WhatsApp ve Fiyat Al butonlarını sakinleştir */
+ /* DARK MODE - Butonlardan tüm parlama, ışıltı, gölgeyi kaldır */
 body.dark .whatsapp-btn,
-body.dark .whatsapp-btn * {
-  background-color: #2e7d32 !important; /* daha koyu yeşil */
-  color: #ffffff !important;
-  border-color: #1b5e20 !important;
-}
-
+body.dark .whatsapp-btn *,
 body.dark .fiyat-btn,
-body.dark .fiyat-btn * {
-  background-color: #ff8f00 !important; /* daha koyu turuncu */
-  color: #000000 !important;
-  border-color: #e65100 !important;
+body.dark .fiyat-btn *,
+body.dark .btn,
+body.dark .btn *,
+body.dark button,
+body.dark button * {
+  background-color: #2c2c2c !important;
+  color: #f1f1f1 !important;
+  border: 1px solid #444 !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  transition: none !important;
 }
 
 
