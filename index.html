@@ -699,31 +699,27 @@ main {
   z-index: 1;
 }
 
-/* Logo varsayılan gizli */
 .desktop-logo {
   display: none;
 }
 
 @media (min-width: 1024px) {
+  #site-header {
+    position: relative;
+  }
+
   .desktop-logo {
     display: block;
-    position: absolute; /* top-bar içinde sabit */
-    top: 10px;            /* şeritte dikey hizalama */
-    left: 20px;           /* sola yakınlaştır */
+    position: absolute;
+    top: 0;
+    left: 20px;
     z-index: 10;
   }
 
   .desktop-logo img {
-    height: 50px; /* Boyut dengeli */
+    height: 60px;
     width: auto;
-    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.3));
-  }
-}
-
-/* Mobilde tamamen gizli */
-@media (max-width: 768px) {
-  .desktop-logo {
-    display: none;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.4));
   }
 }
   </style>
