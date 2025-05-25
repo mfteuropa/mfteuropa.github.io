@@ -819,12 +819,15 @@ body.dark h6 {
 body.dark p {
   color: #cccccc !important;
 }
-    /* Dark modda ülke isimlerini netleştir */
-body.dark .country-name,
-body.dark .country-label,
-body.dark .card p,
-body.dark .flag-name {
-  color: #eeeeee !important;
+   /* DARK MODE: Ülke isimleri buton/kart içindeyse zorla beyaz göster */
+body.dark .card button,
+body.dark .card button p,
+body.dark button p,
+body.dark .country-card p,
+body.dark .country-card button,
+body.dark .country-card span,
+body.dark .country-name {
+  color: #f0f0f0 !important;
   opacity: 1 !important;
 }
     /* Dark Mode: WhatsApp ve Fiyat Al butonları uyumlu hale getir */
