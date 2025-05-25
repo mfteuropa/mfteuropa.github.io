@@ -705,30 +705,32 @@ main {
   z-index: 1;
 }
 
-./* LOGO GİZLE MOBİLDE */
+/* LOGO GİZLE MOBİLDE */
 .desktop-logo {
   display: none;
 }
 
-/* SADECE MASAÜSTÜ GÖRÜNÜR */
+/* SADECE MASAÜSTÜ GÖRÜNÜR VE SABİT ÜST SOL KÖŞEYE */
 @media (min-width: 1024px) {
   .desktop-logo {
-  margin: 0;
-  padding: 0;
-}
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    padding: 8px;
+    background-color: white;
+    border-bottom-right-radius: 12px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
 
   .desktop-logo img {
-  height: 60px;
-  max-height: 100%;
-  margin: 0;
-  padding: 0;
-}
+    height: 60px;
+    width: auto;
+  }
 
   nav {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding-left: 0;
+    padding-left: 72px; /* logo kaplamasın diye boşluk */
   }
 }
 
