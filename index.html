@@ -838,19 +838,28 @@ body.dark .country-name {
   font-weight: 600 !important;
   text-shadow: none !important;
 }
-body.dark .whatsapp-btn *,
-body.dark .whatsapp-btn,
-body.dark .fiyat-btn *,
-body.dark .fiyat-btn {
-  color: black !important;
-  fill: black !important;
-  -webkit-text-fill-color: black !important;
+body.dark a.fiyat-btn,
+body.dark a.whatsapp-btn {
+  background-color: #ffffff !important;
+  color: #000 !important;
+  border: 1px solid #ccc !important;
+  box-shadow: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  z-index: 99999 !important;
+}
+
+body.dark a.fiyat-btn *,
+body.dark a.whatsapp-btn * {
+  color: #000 !important;
+  fill: #000 !important;
+  -webkit-text-fill-color: #000 !important;
   text-shadow: none !important;
   filter: none !important;
   opacity: 1 !important;
-  transition: none !important;
 }
-
   </style>
 </head>
 <body>
