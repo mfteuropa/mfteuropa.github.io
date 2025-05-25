@@ -733,10 +733,49 @@ main {
     padding-left: 72px; /* logo kaplamasın diye boşluk */
   }
 }
+    :root {
+  --bg-light: #ffffff;
+  --text-light: #000000;
+  --bg-dark: #121212;
+  --text-dark: #eeeeee;
+}
+
+body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Tema butonu stili */
+.theme-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+
+.theme-toggle button {
+  padding: 8px 12px;
+  font-size: 14px;
+  background: none;
+  border: 2px solid #666;
+  color: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.1);
+}
 
   </style>
 </head>
 <body>
+  <div class="theme-toggle">
+    <button id="toggle-theme">🌙 / 🌞</button>
+  </div>
   <main>
     <div class="top-bar">
       <!-- Sosyal medya ikonları -->
@@ -1190,6 +1229,14 @@ function closePopup() {
 }
    
 </script>
+    <script>
+    const toggleBtn = document.getElementById("toggle-theme");
+    const body = document.body;
+
+    toggleBtn.addEventListener("click", () => {
+      body.classList.toggle("dark");
+    });
+      </script>
   </main>
 </body>
 </html>
