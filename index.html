@@ -1327,6 +1327,24 @@ function closePopup() {
       body.classList.toggle("dark");
     });
       </script>
+    <script>
+  // Sağ tıklamayı devre dışı bırak
+  document.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  });
+
+  // Kaynak görüntüleme tuşlarını devre dışı bırak
+  document.addEventListener("keydown", function (e) {
+    if (
+      e.key === "F12" ||
+      (e.ctrlKey && e.shiftKey && e.key === "I") ||
+      (e.ctrlKey && e.key === "U") ||
+      (e.ctrlKey && e.shiftKey && e.key === "J")
+    ) {
+      e.preventDefault();
+    }
+  });
+</script>
   </main>
 </body>
 </html>
